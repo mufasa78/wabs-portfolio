@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import ContactForm from "./ContactForm";
 
 export default function FinalCTA() {
   const ref = useRef<HTMLDivElement>(null);
@@ -49,20 +50,11 @@ export default function FinalCTA() {
           </p>
 
           <div
-            className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-[opacity,transform] duration-700 ease-out delay-200 ${
+            className={`mt-14 transition-[opacity,transform] duration-700 ease-out delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <a
-              href="#"
-              className="inline-flex items-center gap-3 bg-[#111111] text-[#FFFFFF] px-10 py-5 text-base font-semibold rounded-sm hover:bg-[#2D2D2D] transition-all duration-200 hover:scale-[1.03] hover:shadow-2xl font-body group"
-            >
-              Book Your Free Brand Clarity Session
-              <ArrowRight
-                size={18}
-                className="transition-transform duration-200 group-hover:translate-x-1"
-              />
-            </a>
+            <ContactForm />
           </div>
 
           <p className="font-body text-[#111111]/40 text-sm mt-6">
