@@ -16,7 +16,7 @@ const caseStudies = [
     after: "2 Board Invitations",
     afterDetail:
       "3 keynote invitations, 2 board seat enquiries, and 1,200% LinkedIn profile view increase — all in 60 days.",
-    color: "#C4622D",
+    color: "#D91A6B",
   },
   {
     id: "asante",
@@ -29,7 +29,7 @@ const caseStudies = [
     after: "3× Revenue Growth",
     afterDetail:
       "Restructured offer packaging resulted in tripling monthly revenue within 45 days. Now waitlisted 6 weeks.",
-    color: "#4A5E4F",
+    color: "#A01050",
   },
 ];
 
@@ -38,7 +38,7 @@ export default function CaseStudyPreview() {
   const isVisible = useScrollAnimation(ref);
 
   return (
-    <section id="case-studies" className="py-28 lg:py-36 bg-[#1C1208] relative">
+    <section id="case-studies" className="py-28 lg:py-36 bg-[#111111] relative">
       {/* Subtle texture */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -56,13 +56,13 @@ export default function CaseStudyPreview() {
         >
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-px bg-[#C4622D]" />
-              <span className="font-stat text-[#C4622D] text-sm uppercase tracking-widest font-medium">
+              <div className="w-8 h-px bg-[#D91A6B]" />
+              <span className="font-stat text-[#D91A6B] text-sm uppercase tracking-widest font-medium">
                 Case Studies
               </span>
             </div>
             <h2
-              className="font-display text-[#F5EFE0] leading-tight"
+              className="font-display text-[#FFFFFF] leading-tight"
               style={{
                 fontSize: "clamp(36px, 4.5vw, 56px)",
                 fontVariationSettings: '"WONK" 0.5',
@@ -70,12 +70,12 @@ export default function CaseStudyPreview() {
             >
               Before & after.
               <br />
-              <span className="text-[#C4622D] italic">Real results.</span>
+              <span className="text-[#D91A6B] italic">Real results.</span>
             </h2>
           </div>
           <a
             href="#"
-            className="inline-flex items-center gap-2 font-body text-[#F5EFE0]/60 hover:text-[#F5EFE0] text-sm font-semibold transition-colors duration-200 group"
+            className="inline-flex items-center gap-2 font-body text-[#FFFFFF]/60 hover:text-[#FFFFFF] text-sm font-semibold transition-colors duration-200 group"
           >
             View All Case Studies
             <ArrowUpRight
@@ -98,37 +98,37 @@ export default function CaseStudyPreview() {
               style={{ transitionDelay: `${i * 0.2}s` }}
             >
               {/* Before */}
-              <div className="p-8 lg:p-12 bg-[#F5EFE0]/5 border border-[#F5EFE0]/10">
+              <div className="p-8 lg:p-12 bg-[#FFFFFF]/5 border border-[#FFFFFF]/10">
                 <div className="flex items-center gap-3 mb-6">
                   <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center font-stat font-bold text-[#F5EFE0] text-xs"
+                    className="w-10 h-10 rounded-full flex items-center justify-center font-stat font-bold text-[#FFFFFF] text-xs"
                     style={{ backgroundColor: cs.color }}
                   >
                     {cs.client[0]}
                     {cs.client.split(" ")[1]}
                   </div>
                   <div>
-                    <div className="font-body font-semibold text-[#F5EFE0] text-sm">
+                    <div className="font-body font-semibold text-[#FFFFFF] text-sm">
                       {cs.client}
                     </div>
-                    <div className="font-body text-[#F5EFE0]/50 text-xs">
+                    <div className="font-body text-[#FFFFFF]/50 text-xs">
                       {cs.role}
                     </div>
                   </div>
                 </div>
 
                 <div className="mb-4">
-                  <span className="font-stat text-xs uppercase tracking-widest font-medium text-[#F5EFE0]/40">
+                  <span className="font-stat text-xs uppercase tracking-widest font-medium text-[#FFFFFF]/40">
                     Before WABS
                   </span>
                 </div>
                 <h4
-                  className="font-display text-xl font-semibold text-[#F5EFE0]/40 mb-3 line-through"
+                  className="font-display text-xl font-semibold text-[#FFFFFF]/40 mb-3 line-through"
                   style={{ fontVariationSettings: '"WONK" 0.3' }}
                 >
                   {cs.beforeTitle}
                 </h4>
-                <p className="font-body text-[#F5EFE0]/50 text-base leading-relaxed">
+                <p className="font-body text-[#FFFFFF]/50 text-base leading-relaxed">
                   {cs.before}
                 </p>
               </div>
@@ -139,29 +139,29 @@ export default function CaseStudyPreview() {
                 style={{ backgroundColor: cs.color }}
               >
                 <div className="mb-4">
-                  <span className="font-stat text-xs uppercase tracking-widest font-medium text-[#F5EFE0]/70">
+                  <span className="font-stat text-xs uppercase tracking-widest font-medium text-[#FFFFFF]/70">
                     After WABS
                   </span>
                 </div>
                 <h4
-                  className="font-display text-[#F5EFE0]/40 text-sm font-medium mb-2"
+                  className="font-display text-[#FFFFFF]/40 text-sm font-medium mb-2"
                   style={{ fontVariationSettings: '"WONK" 0.3' }}
                 >
                   {cs.afterTitle}
                 </h4>
                 <div
-                  className="font-stat font-bold text-[#F5EFE0] mb-4"
+                  className="font-stat font-bold text-[#FFFFFF] mb-4"
                   style={{ fontSize: "clamp(28px, 4vw, 48px)" }}
                 >
                   {cs.after}
                 </div>
-                <p className="font-body text-[#F5EFE0]/80 text-base leading-relaxed">
+                <p className="font-body text-[#FFFFFF]/80 text-base leading-relaxed">
                   {cs.afterDetail}
                 </p>
 
                 {/* Decorative circle */}
-                <div className="absolute -bottom-12 -right-12 w-40 h-40 rounded-full border-2 border-[#F5EFE0]/10" />
-                <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full border-2 border-[#F5EFE0]/10" />
+                <div className="absolute -bottom-12 -right-12 w-40 h-40 rounded-full border-2 border-[#FFFFFF]/10" />
+                <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full border-2 border-[#FFFFFF]/10" />
               </div>
             </div>
           ))}

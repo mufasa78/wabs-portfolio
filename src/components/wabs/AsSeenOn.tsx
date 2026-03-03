@@ -31,8 +31,7 @@ export default function AsSeenOn() {
 
   return (
     <section
-      className="py-16 border-t border-b border-[#1C1208]/10"
-      style={{ backgroundColor: "#F5EFE0" }}
+      className="py-16 border-t border-b border-[#E8E8E8] bg-[#F5F5F5]"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10" ref={ref}>
         <div
@@ -42,13 +41,13 @@ export default function AsSeenOn() {
         >
           {/* Label */}
           <div className="shrink-0">
-            <p className="font-stat text-[#1C1208]/40 text-xs uppercase tracking-widest font-semibold text-center md:text-left">
+            <p className="font-stat text-[#111111]/40 text-xs uppercase tracking-widest font-semibold text-center md:text-left">
               As Seen On
             </p>
           </div>
 
           {/* Divider — desktop only */}
-          <div className="hidden md:block w-px h-10 bg-[#1C1208]/15" />
+          <div className="hidden md:block w-px h-10 bg-[#E8E8E8]" />
 
           {/* Logos */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-10 md:gap-14">
@@ -75,4 +74,3 @@ export default function AsSeenOn() {
     </section>
   );
 }
-

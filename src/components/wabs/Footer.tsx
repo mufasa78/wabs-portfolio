@@ -68,10 +68,10 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#1C1208] pt-20 pb-10">
+    <footer className="bg-[#111111] pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 lg:gap-8 pb-16 border-b border-[#F5EFE0]/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 lg:gap-8 pb-16 border-b border-[#FFFFFF]/10">
           {/* Brand + Newsletter */}
           <div>
             <a href="#" className="inline-flex items-center mb-6">
@@ -85,13 +85,13 @@ export default function Footer() {
                 quality={90}
               />
             </a>
-            <p className="font-body text-[#F5EFE0]/55 text-base leading-relaxed mb-8 max-w-sm">
+            <p className="font-body text-[#FFFFFF]/55 text-base leading-relaxed mb-8 max-w-sm">
               Africa's premier branding and positioning agency for knowledge professionals ready to lead their market.
             </p>
 
             {/* Newsletter */}
             <div>
-              <h4 className="font-body text-[#F5EFE0] text-sm font-semibold mb-4">
+              <h4 className="font-body text-[#FFFFFF] text-sm font-semibold mb-4">
                 Brand Authority Insights — weekly
               </h4>
               {!subscribed ? (
@@ -102,18 +102,18 @@ export default function Footer() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Your email"
                     required
-                    className="flex-1 bg-[#F5EFE0]/10 border border-[#F5EFE0]/15 text-[#F5EFE0] placeholder-[#F5EFE0]/35 px-4 py-2.5 rounded-sm font-body text-sm focus:outline-none focus:border-[#C4622D] transition-colors"
+                    className="flex-1 bg-[#FFFFFF]/10 border border-[#FFFFFF]/15 text-[#FFFFFF] placeholder-[#FFFFFF]/35 px-4 py-2.5 rounded-sm font-body text-sm focus:outline-none focus:border-[#D91A6B] transition-colors"
                   />
                   <button
                     type="submit"
-                    className="bg-[#C4622D] text-[#F5EFE0] px-4 py-2.5 rounded-sm hover:bg-[#b05526] transition-colors"
+                    className="bg-[#D91A6B] text-[#FFFFFF] px-4 py-2.5 rounded-sm hover:bg-[#A01050] transition-colors"
                     aria-label="Subscribe"
                   >
                     <ArrowRight size={16} />
                   </button>
                 </form>
               ) : (
-                <p className="font-body text-[#4A5E4F] text-sm font-medium">
+                <p className="font-body text-[#D91A6B] text-sm font-medium">
                   ✓ You're subscribed. Watch your inbox.
                 </p>
               )}
@@ -123,7 +123,7 @@ export default function Footer() {
           {/* Nav columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="font-stat text-[#F5EFE0]/40 text-xs uppercase tracking-widest font-semibold mb-5">
+              <h4 className="font-stat text-[#FFFFFF]/40 text-xs uppercase tracking-widest font-semibold mb-5">
                 {category}
               </h4>
               <ul className="space-y-3">
@@ -134,7 +134,7 @@ export default function Footer() {
                       {...("external" in link && link.external
                         ? { target: "_blank", rel: "noopener noreferrer" }
                         : {})}
-                      className="font-body text-[#F5EFE0]/60 hover:text-[#F5EFE0] text-sm transition-colors duration-200"
+                      className="font-body text-[#FFFFFF]/60 hover:text-[#FFFFFF] text-sm transition-colors duration-200"
                     >
                       {link.label}
                     </a>
@@ -147,7 +147,7 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 pt-10">
-          <p className="font-body text-[#F5EFE0]/35 text-sm">
+          <p className="font-body text-[#FFFFFF]/35 text-sm">
             © {new Date().getFullYear()} WABS Digital. All rights reserved. Africa's Authority Brand Agency.
           </p>
 
@@ -160,7 +160,7 @@ export default function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-sm border border-[#F5EFE0]/15 flex items-center justify-center text-[#F5EFE0]/50 hover:text-[#F5EFE0] hover:border-[#F5EFE0]/40 transition-all duration-200"
+                  className="w-9 h-9 rounded-sm border border-[#FFFFFF]/15 flex items-center justify-center text-[#FFFFFF]/50 hover:text-[#FFFFFF] hover:border-[#D91A6B]/40 transition-all duration-200"
                   aria-label={s.label}
                 >
                   {s.icon}
@@ -170,10 +170,10 @@ export default function Footer() {
 
             {/* Legal */}
             <div className="flex items-center gap-4">
-              <a href="#" className="font-body text-[#F5EFE0]/35 hover:text-[#F5EFE0]/60 text-xs transition-colors">
+              <a href="#" className="font-body text-[#FFFFFF]/35 hover:text-[#FFFFFF]/60 text-xs transition-colors">
                 Privacy
               </a>
-              <a href="#" className="font-body text-[#F5EFE0]/35 hover:text-[#F5EFE0]/60 text-xs transition-colors">
+              <a href="#" className="font-body text-[#FFFFFF]/35 hover:text-[#FFFFFF]/60 text-xs transition-colors">
                 Terms
               </a>
             </div>

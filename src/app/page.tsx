@@ -16,7 +16,7 @@ import MobileFloatingCTA from "@/components/wabs/MobileFloatingCTA";
 
 export default function Page() {
   return (
-    <main className="min-h-screen" style={{ backgroundColor: "#F5EFE0" }}>
+    <main className="min-h-screen" style={{ backgroundColor: "#FFFFFF" }}>
       <Navigation />
       <HeroSection />
       <AudienceSegmentation />

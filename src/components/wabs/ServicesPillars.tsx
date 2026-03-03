@@ -11,8 +11,8 @@ const pillars = [
     description: "Positioning, messaging architecture, and competitive differentiation tailored to your target market.",
     outcome: "You become the obvious choice — not one of many options.",
     size: "lg:col-span-2 lg:col-start-1 lg:row-start-1",
-    bg: "#1C1208",
-    textColor: "#F5EFE0",
+    bg: "#111111",
+    textColor: "#FFFFFF",
   },
   {
     id: "offer",
@@ -21,8 +21,8 @@ const pillars = [
     description: "Structuring your expertise into irresistible, premium-priced offers that sell themselves.",
     outcome: "Your offer does the qualifying — so only right-fit clients enquire.",
     size: "lg:col-span-1 lg:row-span-2 lg:col-start-3 lg:row-start-1",
-    bg: "#C4622D",
-    textColor: "#F5EFE0",
+    bg: "#D91A6B",
+    textColor: "#FFFFFF",
   },
   {
     id: "visibility",
@@ -31,8 +31,8 @@ const pillars = [
     description: "Consistent distribution strategies across LinkedIn, speaking, and strategic partnerships.",
     outcome: "You're seen by the right people, at the right time, consistently.",
     size: "lg:col-span-1 lg:col-start-1 lg:row-start-2",
-    bg: "#4A5E4F",
-    textColor: "#F5EFE0",
+    bg: "#A01050",
+    textColor: "#FFFFFF",
   },
   {
     id: "content",
@@ -41,8 +41,8 @@ const pillars = [
     description: "Thought leadership frameworks that attract inbound leads and build undeniable authority.",
     outcome: "Content that converts cold audiences into warm, paying clients.",
     size: "lg:col-span-1 lg:col-start-2 lg:row-start-2",
-    bg: "#F5EFE0",
-    textColor: "#1C1208",
+    bg: "#FFFFFF",
+    textColor: "#111111",
   },
 ];
 
@@ -52,7 +52,7 @@ export default function ServicesPillars() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <section id="services" className="py-28 lg:py-36 bg-[#F5EFE0]">
+    <section id="services" className="py-28 lg:py-36 bg-[#FFFFFF]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10" ref={ref}>
         {/* Header */}
         <div
@@ -62,13 +62,13 @@ export default function ServicesPillars() {
         >
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-px bg-[#C4622D]" />
-              <span className="font-stat text-[#C4622D] text-sm uppercase tracking-widest font-medium">
+              <div className="w-8 h-px bg-[#D91A6B]" />
+              <span className="font-stat text-[#D91A6B] text-sm uppercase tracking-widest font-medium">
                 Core Services
               </span>
             </div>
             <h2
-              className="font-display text-[#1C1208] leading-tight"
+              className="font-display text-[#111111] leading-tight"
               style={{
                 fontSize: "clamp(36px, 4.5vw, 56px)",
                 fontVariationSettings: '"WONK" 0.5',
@@ -79,7 +79,7 @@ export default function ServicesPillars() {
               One authority brand.
             </h2>
           </div>
-          <p className="font-body text-[#1C1208]/60 text-lg max-w-md leading-relaxed">
+          <p className="font-body text-[#111111]/60 text-lg max-w-md leading-relaxed">
             Every engagement is built on these four disciplines — each one essential to a brand that commands premium respect.
           </p>
         </div>
@@ -144,7 +144,7 @@ export default function ServicesPillars() {
                 <div className="mb-3">
                   <span
                     className="font-stat text-xs uppercase tracking-widest font-semibold"
-                    style={{ color: hoveredId === pillar.id && pillar.bg === "#C4622D" ? "#F5EFE0" : "#C4622D" }}
+                    style={{ color: hoveredId === pillar.id && pillar.bg === "#D91A6B" ? "#FFFFFF" : "#D91A6B" }}
                   >
                     The Outcome
                   </span>
@@ -167,7 +167,7 @@ export default function ServicesPillars() {
                 }`}
                 style={{
                   backgroundColor:
-                    pillar.bg === "#F5EFE0" ? "#C4622D" : "#F5EFE0",
+                    pillar.bg === "#FFFFFF" ? "#D91A6B" : "#FFFFFF",
                 }}
               />
             </div>

@@ -11,12 +11,12 @@ export default function FinalCTA() {
   return (
     <section
       id="booking"
-      className="py-28 lg:py-40 bg-[#F5EFE0] relative overflow-hidden"
+      className="py-28 lg:py-40 bg-[#FFFFFF] relative overflow-hidden"
       ref={ref}
     >
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-px h-full bg-[#1C1208]/8" style={{ left: "10%" }} />
-      <div className="absolute top-0 left-0 w-px h-full bg-[#1C1208]/8" style={{ left: "90%" }} />
+      <div className="absolute top-0 left-0 w-px h-full bg-[#111111]/8" style={{ left: "10%" }} />
+      <div className="absolute top-0 left-0 w-px h-full bg-[#111111]/8" style={{ left: "90%" }} />
 
       <div className="max-w-4xl mx-auto px-6 lg:px-10 relative text-center">
         <div
@@ -25,15 +25,15 @@ export default function FinalCTA() {
           }`}
         >
           <div className="flex items-center justify-center gap-3 mb-8">
-            <div className="w-12 h-px bg-[#C4622D]" />
-            <span className="font-stat text-[#C4622D] text-sm uppercase tracking-widest font-medium">
+            <div className="w-12 h-px bg-[#D91A6B]" />
+            <span className="font-stat text-[#D91A6B] text-sm uppercase tracking-widest font-medium">
               Start Today
             </span>
-            <div className="w-12 h-px bg-[#C4622D]" />
+            <div className="w-12 h-px bg-[#D91A6B]" />
           </div>
 
           <h2
-            className="font-display text-[#1C1208] mb-8 leading-[1.05]"
+            className="font-display text-[#111111] mb-8 leading-[1.05]"
             style={{
               fontSize: "clamp(40px, 5.5vw, 72px)",
               fontVariationSettings: '"WONK" 1',
@@ -41,10 +41,10 @@ export default function FinalCTA() {
           >
             Your authority brand
             <br />
-            <span className="text-[#C4622D] italic">starts with one conversation.</span>
+            <span className="text-[#D91A6B] italic">starts with one conversation.</span>
           </h2>
 
-          <p className="font-body text-[#1C1208]/65 text-xl max-w-xl mx-auto mb-14 leading-relaxed">
+          <p className="font-body text-[#111111]/65 text-xl max-w-xl mx-auto mb-14 leading-relaxed">
             Book a complimentary Brand Clarity Session. In 60 minutes, we'll map your authority positioning and identify the fastest path to premium brand status.
           </p>
 
@@ -55,7 +55,7 @@ export default function FinalCTA() {
           >
             <a
               href="#"
-              className="inline-flex items-center gap-3 bg-[#1C1208] text-[#F5EFE0] px-10 py-5 text-base font-semibold rounded-sm hover:bg-[#2d1a08] transition-all duration-200 hover:scale-[1.03] hover:shadow-2xl font-body group"
+              className="inline-flex items-center gap-3 bg-[#111111] text-[#FFFFFF] px-10 py-5 text-base font-semibold rounded-sm hover:bg-[#2D2D2D] transition-all duration-200 hover:scale-[1.03] hover:shadow-2xl font-body group"
             >
               Book Your Free Brand Clarity Session
               <ArrowRight
@@ -65,14 +65,14 @@ export default function FinalCTA() {
             </a>
           </div>
 
-          <p className="font-body text-[#1C1208]/40 text-sm mt-6">
+          <p className="font-body text-[#111111]/40 text-sm mt-6">
             No obligation. No hard sell. Just clarity.
           </p>
         </div>
 
         {/* Decorative large text watermark */}
         <div
-          className="absolute -bottom-8 left-1/2 -translate-x-1/2 font-display text-[180px] lg:text-[240px] font-bold text-[#1C1208]/[0.03] leading-none select-none pointer-events-none whitespace-nowrap"
+          className="absolute -bottom-8 left-1/2 -translate-x-1/2 font-display text-[180px] lg:text-[240px] font-bold text-[#111111]/[0.03] leading-none select-none pointer-events-none whitespace-nowrap"
           style={{ fontVariationSettings: '"WONK" 1' }}
         >
           WABS

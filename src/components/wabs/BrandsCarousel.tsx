@@ -30,8 +30,7 @@ export default function BrandsCarousel() {
 
   return (
     <section
-      className="py-20 lg:py-28 relative overflow-hidden"
-      style={{ backgroundColor: "#1C1208" }}
+      className="py-20 lg:py-28 relative overflow-hidden bg-[#111111]"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 mb-12" ref={ref}>
         <div
@@ -40,21 +39,21 @@ export default function BrandsCarousel() {
           }`}
         >
           <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-12 h-px bg-[#C4622D]/50" />
-            <span className="font-stat text-[#C4622D] text-sm uppercase tracking-widest font-medium">
+            <div className="w-12 h-px bg-[#D91A6B]/50" />
+            <span className="font-stat text-[#D91A6B] text-sm uppercase tracking-widest font-medium">
               Trusted By
             </span>
-            <div className="w-12 h-px bg-[#C4622D]/50" />
+            <div className="w-12 h-px bg-[#D91A6B]/50" />
           </div>
           <h2
-            className="font-display text-[#F5EFE0] leading-tight"
+            className="font-display text-[#FFFFFF] leading-tight"
             style={{
               fontSize: "clamp(28px, 3.5vw, 44px)",
               fontVariationSettings: '"WONK" 0.5',
             }}
           >
             Brands we have had the{" "}
-            <span className="text-[#C4622D] italic">honour of serving.</span>
+            <span className="text-[#D91A6B] italic">honour of serving.</span>
           </h2>
         </div>
       </div>
@@ -64,11 +63,11 @@ export default function BrandsCarousel() {
         {/* Fade edges */}
         <div
           className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to right, #1C1208 0%, transparent 100%)" }}
+          style={{ background: "linear-gradient(to right, #111111 0%, transparent 100%)" }}
         />
         <div
           className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to left, #1C1208 0%, transparent 100%)" }}
+          style={{ background: "linear-gradient(to left, #111111 0%, transparent 100%)" }}
         />
 
         {/* Scrolling logos */}
@@ -77,7 +76,7 @@ export default function BrandsCarousel() {
             {doubled.map((brand, i) => (
               <div
                 key={`${brand.name}-${i}`}
-                className="shrink-0 flex items-center justify-center bg-[#F5EFE0]/5 border border-[#F5EFE0]/10 hover:bg-[#F5EFE0]/10 transition-all duration-300 rounded-xl p-5"
+                className="shrink-0 flex items-center justify-center bg-[#FFFFFF]/5 border border-[#FFFFFF]/10 hover:bg-[#FFFFFF]/10 transition-all duration-300 rounded-xl p-5"
                 style={{ width: 160, height: 100 }}
               >
                 <Image
@@ -97,4 +96,3 @@ export default function BrandsCarousel() {
     </section>
   );
 }
-

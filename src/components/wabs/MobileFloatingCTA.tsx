@@ -22,10 +22,10 @@ export default function MobileFloatingCTA() {
         visible ? "translate-y-0" : "translate-y-full"
       }`}
     >
-      <div className="bg-[#1C1208] border-t border-[#F5EFE0]/10 px-4 py-3 safe-area-inset-bottom">
+      <div className="bg-[#111111] border-t border-[#FFFFFF]/10 px-4 py-3 safe-area-inset-bottom">
         <a
           href="#booking"
-          className="flex items-center justify-center gap-2 bg-[#C4622D] text-[#F5EFE0] py-3.5 px-6 rounded-sm font-body font-semibold text-sm w-full group"
+          className="flex items-center justify-center gap-2 bg-[#D91A6B] text-[#FFFFFF] py-3.5 px-6 rounded-sm font-body font-semibold text-sm w-full group"
         >
           Book Free Brand Clarity Session
           <ArrowRight

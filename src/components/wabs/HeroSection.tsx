@@ -16,7 +16,7 @@ export default function HeroSection() {
       id="hero"
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #1C1208 0%, #2a1a0a 45%, #3d2415 75%, #6b3520 100%)",
+        background: "linear-gradient(135deg, #111111 0%, #1a1a1a 45%, #2D2D2D 75%, #D91A6B 100%)",
       }}
     >
       {/* Noise texture overlay */}
@@ -31,13 +31,13 @@ export default function HeroSection() {
       <div
         className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none opacity-20"
         style={{
-          background: "radial-gradient(circle, #C4622D 0%, transparent 70%)",
+          background: "radial-gradient(circle, #D91A6B 0%, transparent 70%)",
         }}
       />
       <div
         className="absolute top-1/3 left-1/4 w-[400px] h-[400px] rounded-full pointer-events-none opacity-10"
         style={{
-          background: "radial-gradient(circle, #8B4513 0%, transparent 70%)",
+          background: "radial-gradient(circle, #A01050 0%, transparent 70%)",
         }}
       />
 
@@ -51,15 +51,15 @@ export default function HeroSection() {
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
             >
-              <div className="w-8 h-px bg-[#C4622D]" />
-              <span className="font-stat text-[#C4622D] text-sm font-medium uppercase tracking-widest">
+              <div className="w-8 h-px bg-[#D91A6B]" />
+              <span className="font-stat text-[#D91A6B] text-sm font-medium uppercase tracking-widest">
                 Africa's Premier Branding Agency
               </span>
             </div>
 
             {/* Main Headline */}
             <h1
-              className={`font-display text-[#F5EFE0] leading-[1.05] mb-8 transition-[opacity,transform] duration-700 ease-out delay-100 ${
+              className={`font-display text-[#FFFFFF] leading-[1.05] mb-8 transition-[opacity,transform] duration-700 ease-out delay-100 ${
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{
@@ -70,21 +70,21 @@ export default function HeroSection() {
               Your Expertise
               <br />
               Deserves{" "}
-              <span className="text-[#C4622D] italic">Authority,</span>
+              <span className="text-[#D91A6B] italic">Authority,</span>
               <br />
               Not Just Recognition.
             </h1>
 
             {/* Subtext */}
             <p
-              className={`font-body text-[#F5EFE0]/70 text-lg lg:text-xl mb-6 max-w-xl leading-relaxed transition-[opacity,transform] duration-700 ease-out delay-200 ${
+              className={`font-body text-[#FFFFFF]/70 text-lg lg:text-xl mb-6 max-w-xl leading-relaxed transition-[opacity,transform] duration-700 ease-out delay-200 ${
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               We build premium personal brands for{" "}
-              <span className="text-[#F5EFE0] font-semibold">senior executives</span>,{" "}
-              <span className="text-[#F5EFE0] font-semibold">coaches & consultants</span>, and{" "}
-              <span className="text-[#F5EFE0] font-semibold">early-stage founders</span>{" "}
+              <span className="text-[#FFFFFF] font-semibold">senior executives</span>,{" "}
+              <span className="text-[#FFFFFF] font-semibold">coaches & consultants</span>, and{" "}
+              <span className="text-[#FFFFFF] font-semibold">early-stage founders</span>{" "}
               ready to lead their market.
             </p>
 
@@ -96,7 +96,7 @@ export default function HeroSection() {
             >
               <a
                 href="#booking"
-                className="inline-flex items-center justify-center gap-3 bg-[#C4622D] text-[#F5EFE0] px-8 py-4 text-base font-semibold rounded-sm hover:bg-[#b05526] transition-all duration-200 hover:scale-[1.03] hover:shadow-xl font-body group"
+                className="inline-flex items-center justify-center gap-3 bg-[#D91A6B] text-[#FFFFFF] px-8 py-4 text-base font-semibold rounded-sm hover:bg-[#A01050] transition-all duration-200 hover:scale-[1.03] hover:shadow-xl font-body group"
               >
                 Book a Brand Clarity Session
                 <ArrowRight
@@ -106,7 +106,7 @@ export default function HeroSection() {
               </a>
               <a
                 href="#programs"
-                className="inline-flex items-center justify-center gap-2 border border-[#F5EFE0]/40 text-[#F5EFE0] px-8 py-4 text-base font-semibold rounded-sm hover:border-[#F5EFE0] hover:bg-[#F5EFE0]/5 transition-all duration-200 font-body"
+                className="inline-flex items-center justify-center gap-2 border border-[#FFFFFF]/40 text-[#FFFFFF] px-8 py-4 text-base font-semibold rounded-sm hover:border-[#FFFFFF] hover:bg-[#FFFFFF]/5 transition-all duration-200 font-body"
               >
                 Explore Programs
               </a>
@@ -114,7 +114,7 @@ export default function HeroSection() {
 
             {/* Social proof mini row */}
             <div
-              className={`flex flex-wrap items-center gap-6 mt-12 pt-8 border-t border-[#F5EFE0]/10 transition-[opacity,transform] duration-700 ease-out delay-500 ${
+              className={`flex flex-wrap items-center gap-6 mt-12 pt-8 border-t border-[#FFFFFF]/10 transition-[opacity,transform] duration-700 ease-out delay-500 ${
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
@@ -124,10 +124,10 @@ export default function HeroSection() {
                 { value: "10+", label: "Years Expertise" },
               ].map((stat) => (
                 <div key={stat.label} className="flex items-center gap-3">
-                  <span className="font-stat text-[#C4622D] text-2xl font-bold">
+                  <span className="font-stat text-[#D91A6B] text-2xl font-bold">
                     {stat.value}
                   </span>
-                  <span className="font-body text-[#F5EFE0]/60 text-sm">
+                  <span className="font-body text-[#FFFFFF]/60 text-sm">
                     {stat.label}
                   </span>
                 </div>
@@ -144,11 +144,11 @@ export default function HeroSection() {
             {/* Decorative accent */}
             <div
               className="absolute -top-6 -left-6 w-48 h-48 rounded-full opacity-20 pointer-events-none"
-              style={{ background: "radial-gradient(circle, #C4622D 0%, transparent 70%)" }}
+              style={{ background: "radial-gradient(circle, #D91A6B 0%, transparent 70%)" }}
             />
             <div
               className="absolute -bottom-8 -right-8 w-64 h-64 rounded-full opacity-15 pointer-events-none"
-              style={{ background: "radial-gradient(circle, #8B4513 0%, transparent 70%)" }}
+              style={{ background: "radial-gradient(circle, #A01050 0%, transparent 70%)" }}
             />
 
             {/* Portrait frame */}
@@ -166,14 +166,14 @@ export default function HeroSection() {
                 />
                 {/* Subtle gradient overlay at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 h-1/3"
-                  style={{ background: "linear-gradient(to top, rgba(28,18,8,0.6) 0%, transparent 100%)" }}
+                  style={{ background: "linear-gradient(to top, rgba(17,17,17,0.6) 0%, transparent 100%)" }}
                 />
               </div>
 
               {/* Floating credential badge */}
               <div
-                className="absolute -bottom-5 -left-6 bg-[#C4622D] text-[#F5EFE0] px-5 py-3 rounded-sm"
-                style={{ boxShadow: "0 8px 32px rgba(196,98,45,0.4)" }}
+                className="absolute -bottom-5 -left-6 bg-[#D91A6B] text-[#FFFFFF] px-5 py-3 rounded-sm"
+                style={{ boxShadow: "0 8px 32px rgba(217,26,107,0.4)" }}
               >
                 <p className="font-stat text-xs font-bold uppercase tracking-widest opacity-80">Founder & CEO</p>
                 <p className="font-display text-lg font-semibold">Wambui Njuguna-Mungai</p>
@@ -185,10 +185,10 @@ export default function HeroSection() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-        <span className="font-body text-[#F5EFE0] text-xs uppercase tracking-widest">
+        <span className="font-body text-[#FFFFFF] text-xs uppercase tracking-widest">
           Scroll
         </span>
-        <ChevronDown size={16} className="text-[#F5EFE0] animate-bounce" />
+        <ChevronDown size={16} className="text-[#FFFFFF] animate-bounce" />
       </div>
     </section>
   );

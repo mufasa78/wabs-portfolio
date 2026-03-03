@@ -26,7 +26,7 @@ export default function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-[#1C1208]/95 backdrop-blur-md shadow-lg"
+            ? "bg-[#111111]/95 backdrop-blur-md shadow-lg"
             : "bg-transparent"
         }`}
       >
@@ -52,7 +52,7 @@ export default function Navigation() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="font-body text-[#F5EFE0]/80 hover:text-[#F5EFE0] text-sm font-medium transition-colors duration-200"
+                  className="font-body text-[#FFFFFF]/80 hover:text-[#FFFFFF] text-sm font-medium transition-colors duration-200"
                 >
                   {link.label}
                 </a>
@@ -63,7 +63,7 @@ export default function Navigation() {
             <div className="hidden lg:flex items-center gap-4">
               <a
                 href="#booking"
-                className="inline-flex items-center gap-2 bg-[#C4622D] text-[#F5EFE0] px-5 py-2.5 text-sm font-semibold rounded-sm hover:bg-[#b05526] transition-all duration-200 hover:scale-[1.03] hover:shadow-lg font-body"
+                className="inline-flex items-center gap-2 bg-[#D91A6B] text-[#FFFFFF] px-5 py-2.5 text-sm font-semibold rounded-sm hover:bg-[#A01050] transition-all duration-200 hover:scale-[1.03] hover:shadow-lg font-body"
               >
                 Book Brand Clarity
               </a>
@@ -71,7 +71,7 @@ export default function Navigation() {
 
             {/* Mobile Hamburger */}
             <button
-              className="lg:hidden text-[#F5EFE0] p-2"
+              className="lg:hidden text-[#FFFFFF] p-2"
               onClick={() => setMobileOpen(true)}
             >
               <Menu size={24} />
@@ -82,7 +82,7 @@ export default function Navigation() {
 
       {/* Mobile Full-Screen Overlay */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-[100] bg-[#1C1208] flex flex-col">
+        <div className="fixed inset-0 z-[100] bg-[#111111] flex flex-col">
           <div className="flex items-center justify-between px-6 h-16">
             <Image
               src="/images/wabs-favicon.png"
@@ -95,7 +95,7 @@ export default function Navigation() {
             />
             <button
               onClick={() => setMobileOpen(false)}
-              className="text-[#F5EFE0] p-2"
+              className="text-[#FFFFFF] p-2"
             >
               <X size={24} />
             </button>
@@ -106,7 +106,7 @@ export default function Navigation() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="font-display text-[#F5EFE0] text-4xl font-semibold hover:text-[#C4622D] transition-colors"
+                className="font-display text-[#FFFFFF] text-4xl font-semibold hover:text-[#D91A6B] transition-colors"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
                 {link.label}
@@ -115,7 +115,7 @@ export default function Navigation() {
             <a
               href="#booking"
               onClick={() => setMobileOpen(false)}
-              className="mt-8 inline-block bg-[#C4622D] text-[#F5EFE0] px-8 py-4 text-lg font-semibold rounded-sm text-center font-body"
+              className="mt-8 inline-block bg-[#D91A6B] text-[#FFFFFF] px-8 py-4 text-lg font-semibold rounded-sm text-center font-body"
             >
               Book Brand Clarity Session
             </a>

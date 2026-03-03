@@ -52,6 +52,18 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        brand: {
+          pink: "#D91A6B",
+          black: "#111111",
+          white: "#FFFFFF",
+          offwhite: "#F5F5F5",
+          cream: "#FDF6F0",
+          blush: "#F7C5DC",
+          rose: "#A01050",
+          charcoal: "#2D2D2D",
+          grey: "#E8E8E8",
+          "soft-pink": "#FFD6EA",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

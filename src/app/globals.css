@@ -4,6 +4,21 @@
 
 @layer base {
   :root {
+    /* Brand Primary */
+    --brand-pink: #d91a6b;
+    --brand-black: #111111;
+    --brand-white: #ffffff;
+    --brand-offwhite: #f5f5f5;
+    --brand-cream: #fdf6f0;
+
+    /* Brand Secondary */
+    --brand-blush: #f7c5dc;
+    --brand-rose: #a01050;
+    --brand-charcoal: #2d2d2d;
+    --brand-grey: #e8e8e8;
+    --brand-soft-pink: #ffd6ea;
+
+    /* shadcn tokens */
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -43,36 +58,46 @@
     }
   }
   body {
-    font-family: 'Instrument Sans', sans-serif;
-    background-color: #F5EFE0;
-    color: #1C1208;
+    font-family: "Instrument Sans", sans-serif;
+    background-color: var(--brand-white);
+    color: var(--brand-charcoal);
   }
 }
 
 @layer utilities {
   .font-display {
-    font-family: 'Fraunces', serif;
+    font-family: "Fraunces", serif;
   }
   .font-body {
-    font-family: 'Instrument Sans', sans-serif;
+    font-family: "Instrument Sans", sans-serif;
   }
   .font-stat {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
   }
 
   .wabs-shadow {
-    box-shadow: 0 8px 32px rgba(28, 18, 8, 0.12), 0 2px 8px rgba(196, 98, 45, 0.08);
+    box-shadow:
+      0 8px 32px rgba(17, 17, 17, 0.12),
+      0 2px 8px rgba(217, 26, 107, 0.08);
   }
   .wabs-shadow-lg {
-    box-shadow: 0 20px 60px rgba(28, 18, 8, 0.2), 0 4px 16px rgba(196, 98, 45, 0.1);
+    box-shadow:
+      0 20px 60px rgba(17, 17, 17, 0.2),
+      0 4px 16px rgba(217, 26, 107, 0.1);
   }
 
   .hero-gradient {
-    background: linear-gradient(135deg, #1C1208 0%, #2d1a08 40%, #3d2210 70%, #C4622D 120%);
+    background: linear-gradient(
+      135deg,
+      #111111 0%,
+      #1a1a1a 40%,
+      #2d2d2d 70%,
+      #d91a6b 120%
+    );
   }
 
   .lead-gradient {
-    background: linear-gradient(135deg, #2d1a08 0%, #1C1208 100%);
+    background: linear-gradient(135deg, #2d2d2d 0%, #111111 100%);
   }
 
   .grain-bg {
@@ -95,9 +120,21 @@
   }
 }
 
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
-.delay-500 { animation-delay: 0.5s; }
-.delay-600 { animation-delay: 0.6s; }
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
+.delay-600 {
+  animation-delay: 0.6s;
+}

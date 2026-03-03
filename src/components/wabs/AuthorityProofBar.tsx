@@ -53,7 +53,7 @@ export default function AuthorityProofBar() {
     <section
       ref={ref}
       id="about"
-      className="py-16 lg:py-20 bg-[#1C1208] relative overflow-hidden"
+      className="py-16 lg:py-20 bg-[#111111] relative overflow-hidden"
     >
       {/* Subtle texture */}
       <div
@@ -76,7 +76,7 @@ export default function AuthorityProofBar() {
               style={{ transitionDelay: `${i * 0.1}s` }}
             >
               <div
-                className="font-stat font-bold text-[#C4622D] mb-2"
+                className="font-stat font-bold text-[#D91A6B] mb-2"
                 style={{ fontSize: "clamp(36px, 5vw, 56px)" }}
               >
                 <CountUp
@@ -85,7 +85,7 @@ export default function AuthorityProofBar() {
                   start={isVisible}
                 />
               </div>
-              <div className="font-body text-[#F5EFE0]/60 text-sm lg:text-base">
+              <div className="font-body text-[#FFFFFF]/60 text-sm lg:text-base">
                 {stat.label}
               </div>
             </div>
@@ -99,7 +99,7 @@ export default function AuthorityProofBar() {
           }`}
           style={{
             background:
-              "linear-gradient(to right, transparent, #C4622D40, transparent)",
+              "linear-gradient(to right, transparent, #D91A6B40, transparent)",
             transformOrigin: "center",
           }}
         />

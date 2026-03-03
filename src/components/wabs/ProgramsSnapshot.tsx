@@ -81,7 +81,7 @@ export default function ProgramsSnapshot() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <section id="programs" className="py-28 lg:py-36 bg-[#1C1208] relative overflow-hidden">
+    <section id="programs" className="py-28 lg:py-36 bg-[#111111] relative overflow-hidden">
       {/* Background texture */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -98,20 +98,20 @@ export default function ProgramsSnapshot() {
           }`}
         >
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-px bg-[#C4622D]" />
-            <span className="font-stat text-[#C4622D] text-sm uppercase tracking-widest font-medium">
+            <div className="w-8 h-px bg-[#D91A6B]" />
+            <span className="font-stat text-[#D91A6B] text-sm uppercase tracking-widest font-medium">
               Our Programs
             </span>
           </div>
           <h2
-            className="font-display text-[#F5EFE0] leading-tight"
+            className="font-display text-[#FFFFFF] leading-tight"
             style={{
               fontSize: "clamp(36px, 4.5vw, 56px)",
               fontVariationSettings: '"WONK" 0.5',
             }}
           >
             Choose your
-            <span className="text-[#C4622D] italic"> transformation path.</span>
+            <span className="text-[#D91A6B] italic"> transformation path.</span>
           </h2>
         </div>
 
@@ -122,8 +122,8 @@ export default function ProgramsSnapshot() {
               key={program.id}
               className={`relative rounded-sm flex flex-col transition-[opacity,transform] duration-500 ease-out cursor-pointer overflow-hidden ${
                 program.flagship
-                  ? "bg-[#F5EFE0] mt-6 md:mt-0 md:-mt-4 md:-mb-4 ring-2 ring-[#C4622D]"
-                  : "bg-[#F5EFE0]/5 border border-[#F5EFE0]/10 hover:border-[#F5EFE0]/20"
+                  ? "bg-[#F5F5F5] mt-6 md:-mt-4 md:-mb-4 ring-2 ring-[#D91A6B]"
+                  : "bg-[#F5F5F5]/5 border border-[#F5F5F5]/10 hover:border-[#F5F5F5]/20"
               } ${
                 isVisible
                   ? "opacity-100 translate-y-0"
@@ -136,7 +136,7 @@ export default function ProgramsSnapshot() {
               {/* Flagship badge */}
               {program.flagship && (
                 <div className="absolute top-4 right-4 z-10">
-                  <span className="bg-[#C4622D] text-[#F5EFE0] font-stat text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm">
+                  <span className="bg-[#D91A6B] text-[#FFFFFF] font-stat text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-sm">
                     Most Popular
                   </span>
                 </div>
@@ -169,14 +169,14 @@ export default function ProgramsSnapshot() {
                   <span
                     className="font-stat text-xs font-semibold uppercase tracking-widest"
                     style={{
-                      color: program.flagship ? "#C4622D" : "#C4622D",
+                      color: program.flagship ? "#D91A6B" : "#D91A6B",
                     }}
                   >
                     {program.tier}
                   </span>
                   <span
                     className="font-stat text-xs font-medium"
-                    style={{ color: program.flagship ? "#1C1208" : "#F5EFE0", opacity: 0.5 }}
+                    style={{ color: program.flagship ? "#111111" : "#F5F5F5", opacity: 0.5 }}
                   >
                     {program.duration}
                   </span>
@@ -186,7 +186,7 @@ export default function ProgramsSnapshot() {
                 <h3
                   className="font-display text-xl lg:text-2xl font-semibold mb-3 leading-tight"
                   style={{
-                    color: program.flagship ? "#1C1208" : "#F5EFE0",
+                    color: program.flagship ? "#111111" : "#FFFFFF",
                     fontVariationSettings: '"WONK" 0.3',
                   }}
                 >
@@ -197,7 +197,7 @@ export default function ProgramsSnapshot() {
                 <p
                   className="font-body text-sm mb-6 leading-relaxed"
                   style={{
-                    color: program.flagship ? "#1C1208" : "#F5EFE0",
+                    color: program.flagship ? "#111111" : "#FFFFFF",
                     opacity: program.flagship ? 0.7 : 0.6,
                   }}
                 >
@@ -205,20 +205,20 @@ export default function ProgramsSnapshot() {
                 </p>
 
                 {/* Investment */}
-                <div className="mb-6 pb-6 border-b" style={{ borderColor: program.flagship ? "#1C120815" : "#F5EFE015" }}>
+                <div className="mb-6 pb-6 border-b" style={{ borderColor: program.flagship ? "#11111115" : "#F5F5F515" }}>
                   <div className="flex items-end gap-3 flex-wrap">
                     <span
                       className="font-stat font-bold text-3xl"
-                      style={{ color: program.flagship ? "#C4622D" : "#F5EFE0" }}
+                      style={{ color: program.flagship ? "#D91A6B" : "#F5F5F5" }}
                     >
                       {program.investment}
                     </span>
                     <div className="pb-1">
                       <p className="font-body text-xs font-medium"
-                        style={{ color: program.flagship ? "#1C1208" : "#F5EFE0", opacity: 0.55 }}>
+                        style={{ color: program.flagship ? "#111111" : "#F5F5F5", opacity: 0.55 }}>
                         {program.investmentNote}
                       </p>
-                      <p className="font-stat text-xs font-semibold text-[#C4622D]">
+                      <p className="font-stat text-xs font-semibold text-[#D91A6B]">
                         {program.investmentAlt}
                       </p>
                     </div>
@@ -232,13 +232,13 @@ export default function ProgramsSnapshot() {
                       key={feature}
                       className="flex items-start gap-3 font-body text-sm leading-relaxed"
                       style={{
-                        color: program.flagship ? "#1C1208" : "#F5EFE0",
+                        color: program.flagship ? "#111111" : "#F5F5F5",
                         opacity: program.flagship ? 0.75 : 0.65,
                       }}
                     >
                       <Check
                         size={15}
-                        className="mt-0.5 shrink-0 text-[#C4622D]"
+                        className="mt-0.5 shrink-0 text-[#D91A6B]"
                       />
                       {feature}
                     </li>
@@ -251,8 +251,8 @@ export default function ProgramsSnapshot() {
                     hoveredId === program.id ? "opacity-100 max-h-28" : "opacity-0 max-h-0 overflow-hidden py-0 mb-0"
                   }`}
                   style={{
-                    backgroundColor: program.flagship ? "#1C120810" : "#F5EFE008",
-                    color: program.flagship ? "#1C1208" : "#F5EFE0",
+                    backgroundColor: program.flagship ? "#11111010" : "#F5F5F508",
+                    color: program.flagship ? "#111111" : "#F5F5F5",
                   }}
                 >
                   <span className="font-semibold">Is this for you? </span>
@@ -264,18 +264,18 @@ export default function ProgramsSnapshot() {
                   href={program.href}
                   className="flex items-center justify-center gap-2 py-3.5 px-6 rounded-sm font-body font-semibold text-sm transition-all duration-200 group mt-auto"
                   style={{
-                    backgroundColor: program.flagship ? "#C4622D" : "transparent",
-                    color: "#F5EFE0",
-                    border: program.flagship ? "none" : "1px solid rgba(245,239,224,0.3)",
+                    backgroundColor: program.flagship ? "#D91A6B" : "transparent",
+                    color: "#FFFFFF",
+                    border: program.flagship ? "none" : "1px solid rgba(255,255,255,0.3)",
                   }}
                   onMouseEnter={(e) => {
                     if (!program.flagship) {
-                      e.currentTarget.style.borderColor = "rgba(245,239,224,0.6)";
+                      e.currentTarget.style.borderColor = "rgba(255,255,255,0.6)";
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (!program.flagship) {
-                      e.currentTarget.style.borderColor = "rgba(245,239,224,0.3)";
+                      e.currentTarget.style.borderColor = "rgba(255,255,255,0.3)";
                     }
                   }}
                 >

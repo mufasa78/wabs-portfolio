@@ -13,7 +13,7 @@ const segments = [
     promise: "We architect a brand that positions you as the go-to voice in your industry, opening doors to speaking, board roles, and consulting.",
     cta: "Build Executive Authority",
     href: "#programs",
-    accent: "#C4622D",
+    accent: "#D91A6B",
   },
   {
     id: "coaches",
@@ -23,7 +23,7 @@ const segments = [
     promise: "We build a clarity-first brand that communicates your unique methodology and commands high-ticket positioning.",
     cta: "Command Premium Rates",
     href: "#programs",
-    accent: "#4A5E4F",
+    accent: "#A01050",
   },
   {
     id: "founders",
@@ -33,7 +33,7 @@ const segments = [
     promise: "We translate your vision into a credibility-building brand narrative that accelerates traction and trust.",
     cta: "Build Founder Authority",
     href: "#programs",
-    accent: "#8B6914",
+    accent: "#D91A6B",
   },
 ];
 
@@ -42,7 +42,7 @@ export default function AudienceSegmentation() {
   const isVisible = useScrollAnimation(ref);
 
   return (
-    <section id="audience" className="py-28 lg:py-36 bg-[#F5EFE0]">
+    <section id="audience" className="py-28 lg:py-36 bg-[#FDF6F0]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10" ref={ref}>
         {/* Section Header */}
         <div
@@ -51,13 +51,13 @@ export default function AudienceSegmentation() {
           }`}
         >
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-px bg-[#C4622D]" />
-            <span className="font-stat text-[#C4622D] text-sm uppercase tracking-widest font-medium">
+            <div className="w-8 h-px bg-[#D91A6B]" />
+            <span className="font-stat text-[#D91A6B] text-sm uppercase tracking-widest font-medium">
               Who We Serve
             </span>
           </div>
           <h2
-            className="font-display text-[#1C1208] leading-tight"
+            className="font-display text-[#111111] leading-tight"
             style={{
               fontSize: "clamp(36px, 4.5vw, 56px)",
               fontVariationSettings: '"WONK" 0.5',
@@ -72,7 +72,7 @@ export default function AudienceSegmentation() {
           {segments.map((seg, i) => (
             <div
               key={seg.id}
-              className={`group relative bg-white rounded-sm p-8 lg:p-10 flex flex-col justify-between border border-[#1C1208]/8 hover:border-[#C4622D]/30 transition-[opacity,transform,border-color,box-shadow] duration-500 ease-out hover:-translate-y-2 cursor-pointer wabs-shadow hover:wabs-shadow-lg ${
+              className={`group relative bg-white rounded-sm p-8 lg:p-10 flex flex-col justify-between border border-[#E8E8E8] hover:border-[#D91A6B]/30 transition-[opacity,transform,border-color,box-shadow] duration-500 ease-out hover:-translate-y-2 cursor-pointer wabs-shadow hover:wabs-shadow-lg ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
               style={{
@@ -94,17 +94,17 @@ export default function AudienceSegmentation() {
 
               {/* Content */}
               <div className="flex-1">
-                <h3 className="font-display text-[#1C1208] text-2xl lg:text-3xl font-semibold mb-4">
+                <h3 className="font-display text-[#111111] text-2xl lg:text-3xl font-semibold mb-4">
                   {seg.label}
                 </h3>
-                <p className="font-body text-[#1C1208]/60 text-base leading-relaxed mb-6">
+                <p className="font-body text-[#2D2D2D]/60 text-base leading-relaxed mb-6">
                   {seg.pain}
                 </p>
 
                 {/* Divider */}
-                <div className="w-12 h-px bg-[#C4622D] mb-6" />
+                <div className="w-12 h-px bg-[#D91A6B] mb-6" />
 
-                <p className="font-body text-[#1C1208]/80 text-base leading-relaxed font-medium">
+                <p className="font-body text-[#2D2D2D]/80 text-base leading-relaxed font-medium">
                   {seg.promise}
                 </p>
               </div>

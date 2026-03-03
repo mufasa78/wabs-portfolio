@@ -15,7 +15,7 @@ const testimonials = [
     quote:
       "WABS transformed my LinkedIn presence from a digital CV into a genuine thought leadership platform. Within 60 days, I received two board enquiries and a keynote invitation. The ROI is extraordinary.",
     initials: "AO",
-    color: "#C4622D",
+    color: "#D91A6B",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const testimonials = [
     quote:
       "Before WABS, I was competing on price. Now I attract clients who actively seek me out at my premium rates. The brand clarity they gave me changed everything about how I show up and what I charge.",
     initials: "KA",
-    color: "#4A5E4F",
+    color: "#A01050",
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const testimonials = [
     quote:
       "Investors were interested in our product, but not in us as founders. WABS helped us build the kind of personal credibility that made VCs want to back us personally. We closed our seed round three months after the rebrand.",
     initials: "FH",
-    color: "#8B6914",
+    color: "#D91A6B",
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const testimonials = [
     quote:
       "I went from being unknown outside my industry to being featured in three major publications and landing a consulting contract with a Fortune 500 company — all within the 12-week program.",
     initials: "SN",
-    color: "#C4622D",
+    color: "#D91A6B",
   },
   {
     id: 5,
@@ -55,7 +55,7 @@ const testimonials = [
     quote:
       "The offer packaging work alone was worth 10x the investment. I restructured my coaching packages and tripled my monthly revenue in the first 45 days after implementation.",
     initials: "GO",
-    color: "#4A5E4F",
+    color: "#A01050",
   },
 ];
 
@@ -97,7 +97,7 @@ export default function TestimonialsCarousel() {
   const current = filtered[activeIndex];
 
   return (
-    <section className="py-28 lg:py-36 bg-[#F5EFE0]" ref={ref}>
+    <section className="py-28 lg:py-36 bg-[#FDF6F0]" ref={ref}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Header */}
         <div
@@ -106,20 +106,20 @@ export default function TestimonialsCarousel() {
           }`}
         >
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-px bg-[#C4622D]" />
-            <span className="font-stat text-[#C4622D] text-sm uppercase tracking-widest font-medium">
+            <div className="w-8 h-px bg-[#D91A6B]" />
+            <span className="font-stat text-[#D91A6B] text-sm uppercase tracking-widest font-medium">
               Client Results
             </span>
           </div>
           <h2
-            className="font-display text-[#1C1208] leading-tight"
+            className="font-display text-[#111111] leading-tight"
             style={{
               fontSize: "clamp(36px, 4.5vw, 56px)",
               fontVariationSettings: '"WONK" 0.5',
             }}
           >
             Transformations that speak
-            <span className="text-[#C4622D] italic"> for themselves.</span>
+            <span className="text-[#D91A6B] italic"> for themselves.</span>
           </h2>
         </div>
 
@@ -135,8 +135,8 @@ export default function TestimonialsCarousel() {
               onClick={() => setActiveFilter(f.key)}
               className={`font-body text-sm font-semibold px-5 py-2 rounded-sm transition-all duration-200 ${
                 activeFilter === f.key
-                  ? "bg-[#1C1208] text-[#F5EFE0]"
-                  : "bg-[#1C1208]/8 text-[#1C1208]/60 hover:bg-[#1C1208]/15 hover:text-[#1C1208]"
+                  ? "bg-[#111111] text-[#FFFFFF]"
+                  : "bg-[#111111]/8 text-[#111111]/60 hover:bg-[#111111]/15 hover:text-[#111111]"
               }`}
             >
               {f.label}
@@ -153,8 +153,7 @@ export default function TestimonialsCarousel() {
           >
             <div className="bg-white rounded-sm p-8 lg:p-14 wabs-shadow relative overflow-hidden">
               {/* Quote mark */}
-              <div
-                className="absolute top-6 right-8 font-display text-[120px] leading-none opacity-[0.05] text-[#C4622D] select-none"
+              <div className="absolute top-6 right-8 font-display text-[120px] leading-none opacity-[0.05] text-[#D91A6B] select-none"
                 aria-hidden="true"
               >
                 "
@@ -164,7 +163,7 @@ export default function TestimonialsCarousel() {
                 {/* Quote */}
                 <div>
                   <p
-                    className="font-display text-[#1C1208] leading-relaxed mb-10"
+                    className="font-display text-[#111111] leading-relaxed mb-10"
                     style={{
                       fontSize: "clamp(20px, 2.5vw, 28px)",
                       fontVariationSettings: '"WONK" 0.3',
@@ -175,16 +174,16 @@ export default function TestimonialsCarousel() {
 
                   <div className="flex items-center gap-4">
                     <div
-                      className="w-12 h-12 rounded-full flex items-center justify-center font-stat font-bold text-[#F5EFE0] text-sm shrink-0"
+                      className="w-12 h-12 rounded-full flex items-center justify-center font-stat font-bold text-[#FFFFFF] text-sm shrink-0"
                       style={{ backgroundColor: current.color }}
                     >
                       {current.initials}
                     </div>
                     <div>
-                      <div className="font-body font-semibold text-[#1C1208] text-base">
+                      <div className="font-body font-semibold text-[#111111] text-base">
                         {current.name}
                       </div>
-                      <div className="font-body text-[#1C1208]/55 text-sm">
+                      <div className="font-body text-[#111111]/55 text-sm">
                         {current.title}
                       </div>
                     </div>
@@ -208,14 +207,14 @@ export default function TestimonialsCarousel() {
                 <div className="flex lg:flex-col gap-3">
                   <button
                     onClick={prev}
-                    className="w-12 h-12 rounded-sm border border-[#1C1208]/15 flex items-center justify-center hover:bg-[#1C1208] hover:text-[#F5EFE0] hover:border-[#1C1208] transition-all duration-200 text-[#1C1208]/40"
+                    className="w-12 h-12 rounded-sm border border-[#E8E8E8] flex items-center justify-center hover:bg-[#111111] hover:text-[#FFFFFF] hover:border-[#111111] transition-all duration-200 text-[#111111]/40"
                     aria-label="Previous"
                   >
                     <ChevronLeft size={18} />
                   </button>
                   <button
                     onClick={next}
-                    className="w-12 h-12 rounded-sm border border-[#1C1208]/15 flex items-center justify-center hover:bg-[#1C1208] hover:text-[#F5EFE0] hover:border-[#1C1208] transition-all duration-200 text-[#1C1208]/40"
+                    className="w-12 h-12 rounded-sm border border-[#E8E8E8] flex items-center justify-center hover:bg-[#111111] hover:text-[#FFFFFF] hover:border-[#111111] transition-all duration-200 text-[#111111]/40"
                     aria-label="Next"
                   >
                     <ChevronRight size={18} />
@@ -231,8 +230,8 @@ export default function TestimonialsCarousel() {
                     onClick={() => setActiveIndex(i)}
                     className={`h-1 rounded-full transition-all duration-300 ${
                       i === activeIndex
-                        ? "w-8 bg-[#C4622D]"
-                        : "w-2 bg-[#1C1208]/20"
+                        ? "w-8 bg-[#D91A6B]"
+                        : "w-2 bg-[#111111]/20"
                     }`}
                     aria-label={`Go to testimonial ${i + 1}`}
                   />
