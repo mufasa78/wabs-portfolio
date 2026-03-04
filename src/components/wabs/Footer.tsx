@@ -14,7 +14,8 @@ const footerLinks = {
   Company: [
     { label: "About Wambui", href: "#about-wambui" },
     { label: "Our Services", href: "#services" },
-    { label: "Client Work", href: "#case-studies" },
+    { label: "Client Work", href: "/case-studies" },
+    { label: "Media Coverage", href: "/media-coverage" },
     { label: "Free Brand Blueprint", href: "#lead-magnet" },
   ],
   Connect: [
@@ -129,15 +130,24 @@ export default function Footer() {
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      {...("external" in link && link.external
-                        ? { target: "_blank", rel: "noopener noreferrer" }
-                        : {})}
-                      className="font-body text-[#FFFFFF]/60 hover:text-[#FFFFFF] text-sm transition-colors duration-200"
-                    >
-                      {link.label}
-                    </a>
+                    {link.href.startsWith("http") || link.href.startsWith("#") ? (
+                      <a
+                        href={link.href}
+                        {...("external" in link && link.external
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
+                        className="font-body text-[#FFFFFF]/60 hover:text-[#FFFFFF] text-sm transition-colors duration-200"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="font-body text-[#FFFFFF]/60 hover:text-[#FFFFFF] text-sm transition-colors duration-200"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

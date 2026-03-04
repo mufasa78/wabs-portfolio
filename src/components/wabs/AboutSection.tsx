@@ -68,7 +68,11 @@ export default function AboutSection() {
             }`}
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-px bg-[#D91A6B]" />
+              <div className="flex gap-1">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#D91A6B]" />
+                <div className="w-3 h-1.5 rounded-full bg-[#D91A6B]/50" />
+                <div className="w-8 h-1.5 rounded-full bg-[#D91A6B]/20" />
+              </div>
               <span className="font-stat text-[#D91A6B] text-sm uppercase tracking-widest font-medium">
                 Meet Wambui
               </span>

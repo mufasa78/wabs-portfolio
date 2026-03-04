@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ServiceHeroProps {
   eyebrow: string;
@@ -12,6 +13,7 @@ interface ServiceHeroProps {
   description: string;
   ctaText: string;
   ctaHref: string;
+  heroImage?: string;
 }
 
 export default function ServiceHero({
@@ -22,6 +24,7 @@ export default function ServiceHero({
   description,
   ctaText,
   ctaHref,
+  heroImage,
 }: ServiceHeroProps) {
   const [mounted, setMounted] = useState(false);
 
@@ -59,68 +62,91 @@ export default function ServiceHero({
         }}
       />
 
-      <div className="relative max-w-5xl mx-auto px-6 lg:px-10 pt-32 pb-20 lg:pt-40 lg:pb-28">
-        {/* Eyebrow */}
-        <div
-          className={`inline-flex items-center gap-2 mb-8 transition-[opacity,transform] duration-700 ease-out ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-        >
-          <div className="w-8 h-px bg-[#D91A6B]" />
-          <span className="font-stat text-[#D91A6B] text-sm font-medium uppercase tracking-widest">
-            {eyebrow}
-          </span>
-        </div>
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-32 pb-20 lg:pt-40 lg:pb-28">
+        <div className={`grid ${heroImage ? "lg:grid-cols-2 gap-12 lg:gap-20 items-center" : "grid-cols-1 max-w-5xl mx-auto"}`}>
+          <div>
+            {/* Eyebrow */}
+            <div
+              className={`inline-flex items-center gap-2 mb-8 transition-[opacity,transform] duration-700 ease-out ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+            >
+              <div className="w-8 h-px bg-[#D91A6B]" />
+              <span className="font-stat text-[#D91A6B] text-sm font-medium uppercase tracking-widest">
+                {eyebrow}
+              </span>
+            </div>
 
-        {/* Title */}
-        <h1
-          className={`font-display text-[#FFFFFF] leading-[1.08] mb-6 transition-[opacity,transform] duration-700 ease-out delay-100 ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-          style={{
-            fontSize: "clamp(36px, 5vw, 68px)",
-            fontVariationSettings: '"WONK" 1',
-          }}
-        >
-          {title}
-          <br />
-          <span className="text-[#D91A6B] italic">{titleAccent}</span>
-        </h1>
+            {/* Title */}
+            <h1
+              className={`font-display text-[#FFFFFF] leading-[1.08] mb-6 transition-[opacity,transform] duration-700 ease-out delay-100 ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{
+                fontSize: heroImage ? "clamp(36px, 4.5vw, 60px)" : "clamp(36px, 5vw, 68px)",
+                fontVariationSettings: '"WONK" 1',
+              }}
+            >
+              {title}
+              <br />
+              <span className="text-[#D91A6B] italic">{titleAccent}</span>
+            </h1>
 
-        {/* Subtitle */}
-        <p
-          className={`font-body text-[#FFFFFF]/90 text-xl lg:text-2xl mb-4 max-w-3xl leading-relaxed font-medium transition-[opacity,transform] duration-700 ease-out delay-200 ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          {subtitle}
-        </p>
+            {/* Subtitle */}
+            <p
+              className={`font-body text-[#FFFFFF]/90 text-xl lg:text-2xl mb-4 max-w-3xl leading-relaxed font-medium transition-[opacity,transform] duration-700 ease-out delay-200 ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              {subtitle}
+            </p>
 
-        {/* Description */}
-        <p
-          className={`font-body text-[#FFFFFF]/60 text-lg lg:text-xl mb-10 max-w-3xl leading-relaxed transition-[opacity,transform] duration-700 ease-out delay-300 ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          {description}
-        </p>
+            {/* Description */}
+            <p
+              className={`font-body text-[#FFFFFF]/60 text-lg lg:text-xl mb-10 max-w-3xl leading-relaxed transition-[opacity,transform] duration-700 ease-out delay-300 ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              {description}
+            </p>
 
-        {/* CTA */}
-        <div
-          className={`transition-[opacity,transform] duration-700 ease-out delay-[400ms] ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <Link
-            href={ctaHref}
-            className="inline-flex items-center justify-center gap-3 bg-[#D91A6B] text-[#FFFFFF] px-8 py-4 text-base font-semibold rounded-sm hover:bg-[#A01050] transition-all duration-200 hover:scale-[1.03] hover:shadow-xl font-body group"
-          >
-            {ctaText}
-            <ArrowRight
-              size={18}
-              className="transition-transform duration-200 group-hover:translate-x-1"
-            />
-          </Link>
+            {/* CTA */}
+            <div
+              className={`transition-[opacity,transform] duration-700 ease-out delay-[400ms] ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <Link
+                href={ctaHref}
+                className="inline-flex items-center justify-center gap-3 bg-[#D91A6B] text-[#FFFFFF] px-8 py-4 text-base font-semibold rounded-sm hover:bg-[#A01050] transition-all duration-200 hover:scale-[1.03] hover:shadow-xl font-body group"
+              >
+                {ctaText}
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-200 group-hover:translate-x-1"
+                />
+              </Link>
+            </div>
+          </div>
+
+          {/* Optional Hero Image */}
+          {heroImage && (
+            <div
+              className={`relative hidden lg:block h-[500px] xl:h-[600px] rounded-sm overflow-hidden transition-[opacity,transform] duration-1000 ease-out delay-500 shadow-xl border border-[#FFFFFF]/10 bg-[#111111]/40 ${
+                mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
+              }`}
+            >
+              <Image
+                src={heroImage}
+                alt={title}
+                fill
+                priority
+                className="object-contain p-4 transition-transform duration-1000 hover:scale-105"
+                sizes="(max-width: 1024px) 0vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/60 via-transparent to-transparent pointer-events-none mix-blend-multiply" />
+            </div>
+          )}
         </div>
       </div>
     </section>

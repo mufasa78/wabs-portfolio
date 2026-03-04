@@ -1,35 +1,39 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const caseStudies = [
   {
-    id: "okonkwo",
-    client: "Adaeze O.",
-    role: "Chief Risk Officer",
-    beforeTitle: "Invisible Expert",
+    id: "alex-mwangi",
+    client: "Alex Mwangi",
+    role: "CEO, Cent Worrier | CCG",
+    beforeTitle: "Limited Digital Presence",
     before:
-      "A 20-year banking career with zero digital presence. Passed over for speaking opportunities. LinkedIn profile with 200 connections and no engagement.",
-    afterTitle: "Industry Authority",
-    after: "2 Board Invitations",
+      "Managing both personal and corporate brands with low engagement. CCG had only 300 followers and Alex had 3k with no clear strategic direction.",
+    afterTitle: "Recognised Authority",
+    after: "20K+ Followers",
     afterDetail:
-      "3 keynote invitations, 2 board seat enquiries, and 1,200% LinkedIn profile view increase — all in 60 days.",
+      "Grew personal LinkedIn from 3k to 20k+, and CCG from 300 to 2k+ highly engaged followers. Established clear thought leadership.",
     color: "#D91A6B",
+    image: "/images/man.png",
   },
   {
-    id: "asante",
-    client: "Kwame A.",
-    role: "Executive Coach",
-    beforeTitle: "Competing on Price",
+    id: "elizabeth-nyambura",
+    client: "Elizabeth C.N.",
+    role: "Renewable Energy Advocate",
+    beforeTitle: "Unstructured Expertise",
     before:
-      "Strong coaching results but attracting clients only through referrals at below-market rates. No differentiated positioning.",
-    afterTitle: "Premium Positioning",
-    after: "3× Revenue Growth",
+      "Needed to establish credibility but lacked a consistent brand presence and had not structured her knowledge into a scalable offer.",
+    afterTitle: "Global Certification",
+    after: "14K+ Audience",
     afterDetail:
-      "Restructured offer packaging resulted in tripling monthly revenue within 45 days. Now waitlisted 6 weeks.",
+      "Grew cross-platform audience by 14k+. Launched an accredited training course and secured a contract for a globally recognised certification programme.",
     color: "#A01050",
+    image: "/images/woman.png",
   },
 ];
 
@@ -56,9 +60,13 @@ export default function CaseStudyPreview() {
         >
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-px bg-[#D91A6B]" />
+              <div className="flex gap-1">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#D91A6B]" />
+                <div className="w-3 h-1.5 rounded-full bg-[#D91A6B]/50" />
+                <div className="w-8 h-1.5 rounded-full bg-[#D91A6B]/20" />
+              </div>
               <span className="font-stat text-[#D91A6B] text-sm uppercase tracking-widest font-medium">
-                Case Studies
+                Client Success Stories
               </span>
             </div>
             <h2
@@ -73,8 +81,8 @@ export default function CaseStudyPreview() {
               <span className="text-[#D91A6B] italic">Real results.</span>
             </h2>
           </div>
-          <a
-            href="#"
+          <Link
+            href="/case-studies"
             className="inline-flex items-center gap-2 font-body text-[#FFFFFF]/60 hover:text-[#FFFFFF] text-sm font-semibold transition-colors duration-200 group"
           >
             View All Case Studies
@@ -82,7 +90,7 @@ export default function CaseStudyPreview() {
               size={16}
               className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             />
-          </a>
+          </Link>
         </div>
 
         {/* Case Study Cards */}
@@ -100,13 +108,24 @@ export default function CaseStudyPreview() {
               {/* Before */}
               <div className="p-8 lg:p-12 bg-[#FFFFFF]/5 border border-[#FFFFFF]/10">
                 <div className="flex items-center gap-3 mb-6">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center font-stat font-bold text-[#FFFFFF] text-xs"
-                    style={{ backgroundColor: cs.color }}
-                  >
-                    {cs.client[0]}
-                    {cs.client.split(" ")[1]}
-                  </div>
+                  {cs.image ? (
+                    <div className="w-12 h-12 rounded-full relative overflow-hidden bg-[#F5F5F5] border-2" style={{ borderColor: `${cs.color}40` }}>
+                      <Image
+                        src={cs.image}
+                        alt={cs.client}
+                        fill
+                        className="object-cover object-top"
+                        sizes="48px"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="w-12 h-12 rounded-full flex items-center justify-center font-display font-semibold text-[#FFFFFF] text-lg lg:text-xl"
+                      style={{ backgroundColor: cs.color }}
+                    >
+                      {cs.client.charAt(0)}
+                    </div>
+                  )}
                   <div>
                     <div className="font-body font-semibold text-[#FFFFFF] text-sm">
                       {cs.client}

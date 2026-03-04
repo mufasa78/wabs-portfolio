@@ -8,8 +8,10 @@ import Link from "next/link";
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -19,14 +21,15 @@ export default function Navigation() {
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
     { label: "Programs", href: "#programs" },
-    { label: "Case Studies", href: "#case-studies" },
+    { label: "Case Studies", href: "/case-studies" },
+    { label: "Media Coverage", href: "/media-coverage" },
   ];
 
   return (
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
+          mounted && isScrolled
             ? "bg-[#111111]/95 backdrop-blur-md shadow-lg"
             : "bg-transparent"
         }`}
@@ -50,13 +53,13 @@ export default function Navigation() {
             {/* Center Nav Links — Desktop */}
             <div className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   className="font-body text-[#FFFFFF]/80 hover:text-[#FFFFFF] text-sm font-medium transition-colors duration-200"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -103,7 +106,7 @@ export default function Navigation() {
           </div>
           <div className="flex-1 flex flex-col justify-center px-8 gap-8">
             {navLinks.map((link, i) => (
-              <a
+              <Link
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
@@ -111,7 +114,7 @@ export default function Navigation() {
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <a
               href="#booking"

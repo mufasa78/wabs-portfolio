@@ -182,7 +182,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body style={{ margin: 0, padding: 0 }}>
+      <body className="antialiased font-body" style={{ margin: 0, padding: 0 }}>
         {children}
       </body>
     </html>
