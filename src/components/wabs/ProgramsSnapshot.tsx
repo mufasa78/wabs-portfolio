@@ -2,76 +2,47 @@
 
 import { useRef, useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
-import Image from "next/image";
+import Link from "next/link";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const programs = [
   {
-    id: "brand-launch",
-    tier: "Intensive",
-    name: "4-Week Personal Brand Launch Program",
-    duration: "4 Weeks",
-    tagline: "Go from invisible to positioned — fast.",
-    image: "/images/packages/4-Week-Personal-Brand-Launch-Program-USD-1-scaled.jpeg",
-    investment: "$500",
-    investmentNote: "Virtual · Payable Once",
-    investmentAlt: "$700 In-Person",
+    id: "fractional-strategist",
+    tier: "Ongoing Retainer",
+    name: "Fractional Brand & Marketing Strategist",
+    tagline:
+      "Executive-level brand, marketing, and digital oversight — without the cost of a full-time hire.",
     features: [
-      "Brand positioning & messaging framework",
-      "Professional bio & LinkedIn optimisation",
-      "Visual brand identity guidelines",
-      "30-day content strategy & calendar",
-      "Offer packaging for your signature service",
+      "Brand positioning & narrative oversight",
+      "Marketing strategy & visibility planning",
+      "Digital infrastructure & asset protection",
+      "Ongoing strategic advisory partnership",
+      "Team & vendor coordination",
     ],
-    qualifier: "Ideal if you have expertise but your brand doesn't yet reflect your real value.",
-    cta: "Start My Brand Launch",
-    href: "#booking",
+    qualifier:
+      "For established leaders who carry real authority — but whose brand presence has not yet caught up.",
+    cta: "Learn More",
+    href: "/fractional-strategist",
     flagship: false,
   },
   {
-    id: "social-media",
-    tier: "Ongoing Service",
-    name: "Social Media Content Creation & Management",
-    duration: "Monthly Retainer",
-    tagline: "Consistent authority-building content, done for you.",
-    image: "/images/packages/smc.jpeg",
-    investment: "From $250",
-    investmentNote: "to $950 / month",
-    investmentAlt: "Based on Scope",
+    id: "4-week-program",
+    tier: "Intensive Program",
+    name: "4-Week Strategic Brand Launch & Growth Program",
+    tagline:
+      "A focused, done-with-you engagement to transform your expertise into a credible, visible, and opportunity-generating brand.",
     features: [
-      "Custom content strategy & pillars",
-      "Platform-specific content creation",
-      "Scheduling & community management",
-      "Monthly analytics & growth report",
-      "Flexible packages for every stage",
+      "Brand clarity, positioning & problem definition",
+      "Offer packaging, pricing & digital foundations",
+      "Content strategy & brand communication",
+      "Networking, outreach & relationship building",
+      "Complete brand foundation in 4 weeks",
     ],
-    qualifier: "Perfect for established professionals who need consistent, high-quality content without the hassle.",
-    cta: "Get a Custom Quote",
-    href: "#booking",
+    qualifier:
+      "For professionals, consultants, coaches, and founders ready to build a brand that positions them as the authority.",
+    cta: "Explore the Program",
+    href: "/4-week-brand-program",
     flagship: true,
-  },
-  {
-    id: "startup-kit",
-    tier: "Comprehensive",
-    name: "12-Week Startup Launch Kit",
-    duration: "12 Weeks",
-    tagline: "Everything you need to launch and grow.",
-    image: "/images/packages/12-Week-Startup-Launch-Kit-USD-scaled.jpeg",
-    investment: "$2,000",
-    investmentNote: "Payable in 2 Instalments",
-    investmentAlt: "Website Included",
-    features: [
-      "Complete brand strategy & identity",
-      "Professional website design & build",
-      "Social media setup & content plan",
-      "Lead generation & funnel strategy",
-      "90-day visibility action plan",
-      "2 coaching calls per month",
-    ],
-    qualifier: "For founders and startups ready to launch with a strong, professional brand from day one.",
-    cta: "Apply for Startup Kit",
-    href: "#booking",
-    flagship: false,
   },
 ];
 
@@ -81,7 +52,10 @@ export default function ProgramsSnapshot() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <section id="programs" className="py-28 lg:py-36 bg-[#111111] relative overflow-hidden">
+    <section
+      id="programs"
+      className="py-28 lg:py-36 bg-[#111111] relative overflow-hidden"
+    >
       {/* Background texture */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -90,7 +64,7 @@ export default function ProgramsSnapshot() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 relative" ref={ref}>
+      <div className="max-w-6xl mx-auto px-6 lg:px-10 relative" ref={ref}>
         {/* Header */}
         <div
           className={`mb-16 transition-[opacity,transform] duration-700 ease-out ${
@@ -110,19 +84,22 @@ export default function ProgramsSnapshot() {
               fontVariationSettings: '"WONK" 0.5',
             }}
           >
-            Choose your
-            <span className="text-[#D91A6B] italic"> transformation path.</span>
+            Two paths to
+            <span className="text-[#D91A6B] italic"> brand authority.</span>
           </h2>
+          <p className="font-body text-[#FFFFFF]/55 text-lg mt-4 max-w-xl leading-relaxed">
+            Whether you need ongoing strategic oversight or an intensive brand-building sprint — choose the engagement that matches your stage.
+          </p>
         </div>
 
         {/* Program Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 items-start">
           {programs.map((program, i) => (
             <div
               key={program.id}
               className={`relative rounded-sm flex flex-col transition-[opacity,transform] duration-500 ease-out cursor-pointer overflow-hidden ${
                 program.flagship
-                  ? "bg-[#F5F5F5] mt-6 md:-mt-4 md:-mb-4 ring-2 ring-[#D91A6B]"
+                  ? "bg-[#F5F5F5] ring-2 ring-[#D91A6B]"
                   : "bg-[#F5F5F5]/5 border border-[#F5F5F5]/10 hover:border-[#F5F5F5]/20"
               } ${
                 isVisible
@@ -142,43 +119,15 @@ export default function ProgramsSnapshot() {
                 </div>
               )}
 
-              {/* Package Image */}
-              <div className="relative w-full aspect-[16/9] overflow-hidden">
-                <Image
-                  src={program.image}
-                  alt={program.name}
-                  fill
-                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  quality={80}
-                />
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background: program.flagship
-                      ? "linear-gradient(to bottom, rgba(28,18,8,0.1) 0%, rgba(28,18,8,0.4) 100%)"
-                      : "linear-gradient(to bottom, rgba(28,18,8,0.2) 0%, rgba(28,18,8,0.6) 100%)",
-                  }}
-                />
-              </div>
-
               {/* Card body */}
               <div style={{ padding: "2rem" }} className="flex flex-col flex-1">
-                {/* Tier + Duration */}
-                <div className="flex items-center justify-between mb-4">
+                {/* Tier */}
+                <div className="mb-4">
                   <span
                     className="font-stat text-xs font-semibold uppercase tracking-widest"
-                    style={{
-                      color: program.flagship ? "#D91A6B" : "#D91A6B",
-                    }}
+                    style={{ color: "#D91A6B" }}
                   >
                     {program.tier}
-                  </span>
-                  <span
-                    className="font-stat text-xs font-medium"
-                    style={{ color: program.flagship ? "#111111" : "#F5F5F5", opacity: 0.5 }}
-                  >
-                    {program.duration}
                   </span>
                 </div>
 
@@ -204,27 +153,6 @@ export default function ProgramsSnapshot() {
                   {program.tagline}
                 </p>
 
-                {/* Investment */}
-                <div className="mb-6 pb-6 border-b" style={{ borderColor: program.flagship ? "#11111115" : "#F5F5F515" }}>
-                  <div className="flex items-end gap-3 flex-wrap">
-                    <span
-                      className="font-stat font-bold text-3xl"
-                      style={{ color: program.flagship ? "#D91A6B" : "#F5F5F5" }}
-                    >
-                      {program.investment}
-                    </span>
-                    <div className="pb-1">
-                      <p className="font-body text-xs font-medium"
-                        style={{ color: program.flagship ? "#111111" : "#F5F5F5", opacity: 0.55 }}>
-                        {program.investmentNote}
-                      </p>
-                      <p className="font-stat text-xs font-semibold text-[#D91A6B]">
-                        {program.investmentAlt}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
                 {/* Features */}
                 <ul className="space-y-3 mb-8 flex-1">
                   {program.features.map((feature) => (
@@ -248,10 +176,14 @@ export default function ProgramsSnapshot() {
                 {/* Qualifier — shown on hover */}
                 <div
                   className={`mb-6 p-4 rounded-sm text-sm font-body leading-relaxed transition-all duration-300 ${
-                    hoveredId === program.id ? "opacity-100 max-h-28" : "opacity-0 max-h-0 overflow-hidden py-0 mb-0"
+                    hoveredId === program.id
+                      ? "opacity-100 max-h-28"
+                      : "opacity-0 max-h-0 overflow-hidden py-0 mb-0"
                   }`}
                   style={{
-                    backgroundColor: program.flagship ? "#11111010" : "#F5F5F508",
+                    backgroundColor: program.flagship
+                      ? "#11111010"
+                      : "#F5F5F508",
                     color: program.flagship ? "#111111" : "#F5F5F5",
                   }}
                 >
@@ -260,22 +192,28 @@ export default function ProgramsSnapshot() {
                 </div>
 
                 {/* CTA */}
-                <a
+                <Link
                   href={program.href}
                   className="flex items-center justify-center gap-2 py-3.5 px-6 rounded-sm font-body font-semibold text-sm transition-all duration-200 group mt-auto"
                   style={{
-                    backgroundColor: program.flagship ? "#D91A6B" : "transparent",
+                    backgroundColor: program.flagship
+                      ? "#D91A6B"
+                      : "transparent",
                     color: "#FFFFFF",
-                    border: program.flagship ? "none" : "1px solid rgba(255,255,255,0.3)",
+                    border: program.flagship
+                      ? "none"
+                      : "1px solid rgba(255,255,255,0.3)",
                   }}
                   onMouseEnter={(e) => {
                     if (!program.flagship) {
-                      e.currentTarget.style.borderColor = "rgba(255,255,255,0.6)";
+                      e.currentTarget.style.borderColor =
+                        "rgba(255,255,255,0.6)";
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (!program.flagship) {
-                      e.currentTarget.style.borderColor = "rgba(255,255,255,0.3)";
+                      e.currentTarget.style.borderColor =
+                        "rgba(255,255,255,0.3)";
                     }
                   }}
                 >
@@ -284,7 +222,7 @@ export default function ProgramsSnapshot() {
                     size={15}
                     className="transition-transform duration-200 group-hover:translate-x-1"
                   />
-                </a>
+                </Link>
               </div>
             </div>
           ))}

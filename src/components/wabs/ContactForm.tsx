@@ -4,9 +4,8 @@ import { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
 
 const services = [
-  "Personal Brand Launch",
-  "Social Media Management",
-  "Startup Launch Kit",
+  "Fractional Brand & Marketing Strategist",
+  "4-Week Brand Launch & Growth Program",
   "Brand Strategy Consulting",
   "Other",
 ];

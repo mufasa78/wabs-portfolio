@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 
 const footerLinks = {
   Programs: [
-    { label: "4-Week Brand Launch", href: "#programs" },
-    { label: "Social Media Management", href: "#programs" },
-    { label: "12-Week Startup Launch Kit", href: "#programs" },
+    { label: "Fractional Strategist", href: "/fractional-strategist" },
+    { label: "4-Week Brand Program", href: "/4-week-brand-program" },
     { label: "Book a Strategy Call", href: "#booking" },
   ],
   Company: [
@@ -74,7 +74,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 lg:gap-8 pb-16 border-b border-[#FFFFFF]/10">
           {/* Brand + Newsletter */}
           <div>
-            <a href="#" className="inline-flex items-center mb-6">
+            <Link href="/" className="inline-flex items-center mb-6">
               <Image
                 src="/images/wabs-favicon.png"
                 alt="WABS Digital"
@@ -84,7 +84,7 @@ export default function Footer() {
                 sizes="160px"
                 quality={90}
               />
-            </a>
+            </Link>
             <p className="font-body text-[#FFFFFF]/55 text-base leading-relaxed mb-8 max-w-sm">
               Africa's premier branding and positioning agency for knowledge professionals ready to lead their market.
             </p>
