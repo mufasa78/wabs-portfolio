@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import GlobalErrorListener from "@/components/wabs/GlobalErrorListener";
 
 const SITE_URL = "https://www.wabsdigital.com";
 const OG_IMAGE = `${SITE_URL}/images/og-cover.png`;
@@ -18,18 +19,28 @@ export const metadata: Metadata = {
     "personal branding Africa",
     "personal branding Kenya",
     "personal branding Nairobi",
+    "personal branding Lagos",
+    "personal branding Accra",
+    "personal branding Johannesburg",
+    "personal branding London",
+    "personal branding New York",
     "executive branding Kenya",
     "executive branding Africa",
+    "executive positioning Africa",
     "personal brand coach Nairobi",
     "brand strategy Africa",
     "LinkedIn personal branding Africa",
     "thought leadership Africa",
+    "authority building for leaders",
     "personal branding for coaches Kenya",
     "founder branding Africa",
     "WABS Digital",
     "Wambui personal brand",
     "premium branding agency Africa",
     "social media branding Kenya",
+    "digital presence for executives",
+    "AEO optimization for leaders",
+    "personal branding for diaspora",
   ],
   authors: [{ name: "WABS Digital", url: SITE_URL }],
   creator: "WABS Digital",
@@ -75,8 +86,8 @@ export const metadata: Metadata = {
 
   /* ── Icons ── */
   icons: {
-    icon: "/images/wabs-favicon.png",
-    shortcut: "/images/wabs-favicon.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
     apple: "/images/wabs-favicon.png",
   },
 
@@ -97,7 +108,7 @@ const jsonLd = {
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/images/wabs-favicon.png`,
+        url: `${SITE_URL}/images/wabs-logo.png`,
       },
       sameAs: [
         "https://www.linkedin.com/company/wabsdigital",
@@ -149,10 +160,44 @@ const jsonLd = {
         "Social Media Strategy",
         "Content Strategy",
         "Brand Coaching",
+        "Fractional Brand Strategy",
+        "Digital Infrastructure Audit",
       ],
+      knowsAbout: [
+        "Personal Branding",
+        "Brand Communication",
+        "Digital Marketing",
+        "Executive Presence",
+        "Thought Leadership",
+      ],
+      offers: [
+        {
+          "@type": "Service",
+          "name": "Fractional Brand & Marketing Strategist",
+          "url": `${SITE_URL}/fractional-strategist/`,
+        },
+        {
+          "@type": "Service",
+          "name": "4-Week Strategic Brand Launch & Growth Program",
+          "url": `${SITE_URL}/4-week-brand-program/`,
+        },
+      ],
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${SITE_URL}/#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": SITE_URL
+        }
+      ]
     },
   ],
 };
+
 
 export default function RootLayout({
   children,
@@ -183,6 +228,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased font-body" style={{ margin: 0, padding: 0 }}>
+        <GlobalErrorListener />
         {children}
       </body>
     </html>

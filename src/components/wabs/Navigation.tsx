@@ -41,11 +41,11 @@ export default function Navigation() {
               <Image
                 src="/images/wabs-favicon.png"
                 alt="WABS Digital"
-                width={140}
+                width={40}
                 height={40}
                 className="h-10 w-auto object-contain"
                 priority
-                sizes="140px"
+                sizes="40px"
                 quality={90}
               />
             </Link>
@@ -91,10 +91,10 @@ export default function Navigation() {
             <Image
               src="/images/wabs-favicon.png"
               alt="WABS Digital"
-              width={120}
+              width={36}
               height={36}
               className="h-9 w-auto object-contain"
-              sizes="120px"
+              sizes="36px"
               quality={90}
             />
             <button

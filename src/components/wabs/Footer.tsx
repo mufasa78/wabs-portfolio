@@ -79,10 +79,10 @@ export default function Footer() {
               <Image
                 src="/images/wabs-favicon.png"
                 alt="WABS Digital"
-                width={160}
+                width={48}
                 height={48}
                 className="h-12 w-auto object-contain"
-                sizes="160px"
+                sizes="48px"
                 quality={90}
               />
             </Link>

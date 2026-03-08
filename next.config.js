@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
   images: {
+    unoptimized: true,
     // Serve modern formats — Next.js auto-converts to AVIF/WebP when supported
     formats: ["image/avif", "image/webp"],
 
