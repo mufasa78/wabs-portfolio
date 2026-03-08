@@ -9,37 +9,45 @@ import { useEffect } from "react";
  */
 export default function GlobalErrorListener() {
   useEffect(() => {
-    // 1. Intercept console.error as Next.js logs ChunkLoadErrors there
+    // 1. Intercept console.error
     const originalConsoleError = window.console.error;
-
     window.console.error = (...args) => {
       const error = args[0];
-      
       if (
-        (error instanceof Error && error.name === "ChunkLoadError") ||
+        (error instanceof Error && (error.name === "ChunkLoadError" || error.message?.includes("ChunkLoadError"))) ||
         (typeof error === "string" && error.includes("ChunkLoadError"))
       ) {
-        console.warn("ChunkLoadError detected. Reloading page to fetch latest deployment...");
+        console.warn("ChunkLoadError caught via console. Reloading...");
         window.location.reload();
         return;
       }
-
       originalConsoleError.apply(window.console, args);
     };
 
-    // 2. Also listen for unhandled resource loading errors
-    const handleGlobalError = (event: ErrorEvent) => {
-      if (event.message && event.message.includes("ChunkLoadError")) {
-        console.warn("Global ChunkLoadError detected. Reloading...");
+    // 2. Listen for unhandled promise rejections (often how ChunkLoadErrors manifest)
+    const handleRejection = (event: PromiseRejectionEvent) => {
+      if (event.reason && (event.reason.name === "ChunkLoadError" || event.reason.message?.includes("ChunkLoadError"))) {
+        console.warn("ChunkLoadError caught via rejection. Reloading...");
         window.location.reload();
       }
     };
 
-    window.addEventListener("error", handleGlobalError);
+    // 3. Listen for script loading errors in the capture phase
+    const handleCaptureError = (event: ErrorEvent) => {
+      const target = event.target as HTMLElement;
+      if (target && target.tagName === "SCRIPT" && (target as HTMLScriptElement).src.includes("/_next/")) {
+        console.warn("Static script failed to load. Reloading...");
+        window.location.reload();
+      }
+    };
+
+    window.addEventListener("unhandledrejection", handleRejection);
+    window.addEventListener("error", handleCaptureError, true); // Capture phase is key for scripts
 
     return () => {
       window.console.error = originalConsoleError;
-      window.removeEventListener("error", handleGlobalError);
+      window.removeEventListener("unhandledrejection", handleRejection);
+      window.removeEventListener("error", handleCaptureError, true);
     };
   }, []);
 
