@@ -95,7 +95,9 @@ export default function HeroSection() {
               }`}
             >
               <a
-                href="#booking"
+                href="https://selar.com/dlo5455b8f"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-[#D91A6B] text-[#FFFFFF] px-8 py-4 text-base font-semibold rounded-sm hover:bg-[#A01050] transition-all duration-200 hover:scale-[1.03] hover:shadow-xl font-body group"
               >
                 Book a Brand Clarity Session
@@ -176,7 +178,7 @@ export default function HeroSection() {
                 style={{ boxShadow: "0 8px 32px rgba(217,26,107,0.4)" }}
               >
                 <p className="font-stat text-xs font-bold uppercase tracking-widest opacity-80">Founder & CEO</p>
-                <p className="font-display text-lg font-semibold">Wambui Njuguna-Mungai</p>
+                <p className="font-display text-lg font-semibold">Wambui Kuria</p>
               </div>
             </div>
           </div>

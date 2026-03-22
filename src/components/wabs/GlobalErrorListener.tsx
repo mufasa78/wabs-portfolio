@@ -6,9 +6,22 @@ import { useEffect } from "react";
  * GlobalErrorListener handles ChunkLoadErrors by triggering a page reload.
  * This is common in Next.js when a new deployment happens and the client 
  * tries to load a JS chunk hash that no longer exists on the server.
+ * 
+ * NOTE: Added reload prevention to avoid infinite loops.
  */
 export default function GlobalErrorListener() {
   useEffect(() => {
+    // Prevent infinite reload loops by tracking reload attempts
+    const reloadKey = "wabs_reload_timestamp";
+    const now = Date.now();
+    const lastReload = localStorage.getItem(reloadKey);
+    
+    // If we've reloaded in the last 5 seconds, don't reload again
+    if (lastReload && now - parseInt(lastReload) < 5000) {
+      console.warn("Reload loop detected. Skipping error handler reload.");
+      return;
+    }
+
     // 1. Intercept console.error
     const originalConsoleError = window.console.error;
     window.console.error = (...args) => {
@@ -18,6 +31,7 @@ export default function GlobalErrorListener() {
         (typeof error === "string" && error.includes("ChunkLoadError"))
       ) {
         console.warn("ChunkLoadError caught via console. Reloading...");
+        localStorage.setItem(reloadKey, Date.now().toString());
         window.location.reload();
         return;
       }
@@ -28,6 +42,7 @@ export default function GlobalErrorListener() {
     const handleRejection = (event: PromiseRejectionEvent) => {
       if (event.reason && (event.reason.name === "ChunkLoadError" || event.reason.message?.includes("ChunkLoadError"))) {
         console.warn("ChunkLoadError caught via rejection. Reloading...");
+        localStorage.setItem(reloadKey, Date.now().toString());
         window.location.reload();
       }
     };
@@ -37,6 +52,7 @@ export default function GlobalErrorListener() {
       const target = event.target as HTMLElement;
       if (target && target.tagName === "SCRIPT" && (target as HTMLScriptElement).src.includes("/_next/")) {
         console.warn("Static script failed to load. Reloading...");
+        localStorage.setItem(reloadKey, Date.now().toString());
         window.location.reload();
       }
     };

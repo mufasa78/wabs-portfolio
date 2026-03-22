@@ -282,11 +282,11 @@ function ImpactNumbersSection() {
   const isVisible = useScrollAnimation(ref);
 
   return (
-    <section className="py-20 bg-[#F5F5F5] border-b border-[#E8E8E8]" ref={ref}>
+    <section className="py-16 md:py-20 bg-[#F5F5F5] border-b border-[#E8E8E8]" ref={ref}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div
-          className={`grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 transition-[opacity,transform] duration-700 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          className={`grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-12 transition-[opacity,transform] duration-700 ease-out ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-100 translate-y-0"
           }`}
         >
           {impactNumbers.map((stat, i) => (
@@ -295,7 +295,7 @@ function ImpactNumbersSection() {
               className="text-center"
               style={{ transitionDelay: `${i * 0.1}s` }}
             >
-              <h3 className="font-display text-4xl lg:text-5xl font-bold text-[#D91A6B] mb-2 leading-none">
+              <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[#D91A6B] mb-2 leading-none">
                 {stat.value}
               </h3>
               <p className="font-stat text-[#111111]/70 text-xs font-semibold uppercase tracking-widest">
@@ -318,7 +318,7 @@ function CaseStudiesSection() {
       <div className="max-w-5xl mx-auto px-6 lg:px-10">
         <div
           className={`mb-16 transition-[opacity,transform] duration-700 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            isVisible ? "opacity-100 translate-y-0" : "opacity-100 translate-y-0"
           }`}
         >
           <div className="flex items-center gap-3 mb-4">
@@ -344,23 +344,23 @@ function CaseStudiesSection() {
             <div
               key={study.id}
               className={`transition-[opacity,transform] duration-700 ease-out ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                isVisible ? "opacity-100 translate-y-0" : "opacity-100 translate-y-0"
               }`}
               style={{ transitionDelay: `${i * 0.05}s` }}
             >
               {/* Header */}
-              <div className="mb-8 pb-6 border-b border-[#E8E8E8] grid lg:grid-cols-12 gap-8 items-center">
+              <div className="mb-8 pb-6 border-b border-[#E8E8E8] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 items-start lg:items-center">
                 <div className="lg:col-span-8">
                   <span className="font-stat text-[#D91A6B] text-xs font-bold uppercase tracking-widest mb-2 block">
                     Case Study {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3
-                    className="font-display text-[#111111] text-3xl lg:text-4xl font-semibold mb-3"
+                    className="font-display text-[#111111] text-2xl md:text-3xl lg:text-4xl font-semibold mb-3"
                     style={{ fontVariationSettings: '"WONK" 0.3' }}
                   >
                     {study.name}
                   </h3>
-                  <p className="font-body text-[#111111]/55 text-base italic font-medium">
+                  <p className="font-body text-[#111111]/55 text-sm md:text-base italic font-medium">
                     {study.role}
                   </p>
                 </div>
@@ -371,40 +371,40 @@ function CaseStudiesSection() {
                       alt={study.name}
                       fill
                       className="object-contain transition-transform duration-1000 ease-out group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 30vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 30vw"
                     />
                     <div className="absolute inset-0 bg-[#D91A6B]/5 group-hover:bg-transparent transition-colors duration-1000 ease-out z-10 pointer-events-none" />
                   </div>
                 )}
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-16">
                 {/* Left Column: Context & Execution */}
-                <div className="lg:col-span-7 space-y-10">
+                <div className="lg:col-span-7 space-y-8 md:space-y-10">
                   {/* The Challenge */}
                   <div>
-                    <h4 className="font-stat text-[#111111] text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#111111]/30" />
+                    <h4 className="font-stat text-[#111111] text-xs md:text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#111111]/30 shrink-0" />
                       The Challenge
                     </h4>
-                    <p className="font-body text-[#111111]/75 text-base leading-relaxed bg-[#F5F5F5] p-6 rounded-sm border-l-4 border-[#111111]/10">
+                    <p className="font-body text-[#111111]/75 text-sm md:text-base leading-relaxed bg-[#F5F5F5] p-4 md:p-6 rounded-sm border-l-4 border-[#111111]/10">
                       {study.challenge}
                     </p>
                   </div>
 
                   {/* What We Did */}
                   <div>
-                    <h4 className="font-stat text-[#111111] text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#D91A6B]" />
+                    <h4 className="font-stat text-[#111111] text-xs md:text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#D91A6B] shrink-0" />
                       What We Did
                     </h4>
-                    <ul className="space-y-3 pl-4">
+                    <ul className="space-y-2 md:space-y-3 pl-4">
                       {study.whatWeDid.map((item) => (
                         <li
                           key={item}
-                          className="flex items-start gap-3 font-body text-[#111111]/80 text-[15px] leading-relaxed relative"
+                          className="flex items-start gap-3 font-body text-[#111111]/80 text-sm md:text-[15px] leading-relaxed relative"
                         >
-                          <span className="absolute left-[-1rem] top-2 w-1.5 h-1.5 rounded-full bg-[#D91A6B]/50" />
+                          <span className="absolute left-[-1rem] top-2 w-1.5 h-1.5 rounded-full bg-[#D91A6B]/50 shrink-0" />
                           {item}
                         </li>
                       ))}
@@ -413,9 +413,9 @@ function CaseStudiesSection() {
                 </div>
 
                 {/* Right Column: Results & Quote */}
-                <div className="lg:col-span-5 space-y-10">
+                <div className="lg:col-span-5 space-y-8 md:space-y-10">
                   {/* The Results */}
-                  <div className="bg-[#111111] text-[#FFFFFF] rounded-sm p-8 shadow-xl relative overflow-hidden">
+                  <div className="bg-[#111111] text-[#FFFFFF] rounded-sm p-6 md:p-8 shadow-xl relative overflow-hidden">
                      {/* Decorative noise */}
                     <div
                       className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -424,17 +424,17 @@ function CaseStudiesSection() {
                       }}
                     />
                     
-                    <h4 className="font-stat text-[#D91A6B] text-sm font-bold uppercase tracking-wider mb-6 flex items-center gap-3">
+                    <h4 className="font-stat text-[#D91A6B] text-xs md:text-sm font-bold uppercase tracking-wider mb-4 md:mb-6 flex items-center gap-3">
                       The Results
-                      <ArrowUpRight size={16} />
+                      <ArrowUpRight size={16} className="shrink-0" />
                     </h4>
-                    <ul className="space-y-4 relative z-10">
+                    <ul className="space-y-3 md:space-y-4 relative z-10">
                       {study.results.map((item) => (
                         <li
                           key={item}
-                          className="flex items-start gap-3 font-body text-[#FFFFFF]/85 text-sm leading-relaxed"
+                          className="flex items-start gap-3 font-body text-[#FFFFFF]/85 text-xs md:text-sm leading-relaxed"
                         >
-                          <svg className="w-5 h-5 text-[#D91A6B] shrink-0 fill-current" viewBox="0 0 20 20">
+                          <svg className="w-4 md:w-5 h-4 md:h-5 text-[#D91A6B] shrink-0 fill-current mt-0.5" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                           </svg>
                           <span className="pt-0.5">{item}</span>
@@ -445,14 +445,14 @@ function CaseStudiesSection() {
 
                   {/* Quote */}
                   {study.quote && (
-                    <blockquote className="border-l-4 border-[#D91A6B] pl-6 py-2">
-                      <p className="font-body text-[#111111]/80 text-lg italic leading-relaxed font-medium mb-4">
+                    <blockquote className="border-l-4 border-[#D91A6B] pl-4 md:pl-6 py-2">
+                      <p className="font-body text-[#111111]/80 text-base md:text-lg italic leading-relaxed font-medium mb-3 md:mb-4">
                         &ldquo;{study.quote.text}&rdquo;
                       </p>
                       <footer className="font-stat text-[#111111]/50 text-xs font-semibold uppercase tracking-wider flex flex-col gap-1">
                         — {study.quote.author.split('|')[0].trim()}
                         {study.quote.author.split('|').length > 1 && (
-                          <span className="text-[#D91A6B] normal-case tracking-normal">| {study.quote.author.split('|').slice(1).join('|').trim()}</span>
+                          <span className="text-[#D91A6B] normal-case tracking-normal text-[10px]">| {study.quote.author.split('|').slice(1).join('|').trim()}</span>
                         )}
                       </footer>
                     </blockquote>
@@ -476,7 +476,7 @@ function TestimonialsSection() {
       <div className="max-w-6xl mx-auto px-6 lg:px-10 relative">
         <div
           className={`mb-16 transition-[opacity,transform] duration-700 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            isVisible ? "opacity-100 translate-y-0" : "opacity-100 translate-y-0"
           }`}
         >
           <div className="flex items-center gap-3 mb-4">
@@ -494,36 +494,36 @@ function TestimonialsSection() {
           >
             What They Say <span className="text-[#D91A6B] italic">About Us.</span>
           </h2>
-          <p className="font-body text-[#111111]/55 text-lg mt-4 max-w-xl leading-relaxed">
+          <p className="font-body text-[#111111]/55 text-base md:text-lg mt-4 max-w-xl leading-relaxed">
             These are the unprompted words of professionals who have worked with WABS.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {testimonials.map((test, i) => (
             <div
               key={i}
-              className={`bg-[#FFFFFF] p-8 rounded-sm shadow-sm border border-[#E8E8E8] transition-[opacity,transform] duration-700 ease-out flex flex-col justify-between ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+              className={`bg-[#FFFFFF] p-6 md:p-8 rounded-sm shadow-sm border border-[#E8E8E8] transition-[opacity,transform] duration-700 ease-out flex flex-col justify-between ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-100 translate-y-0"
               }`}
               style={{ transitionDelay: `${i * 0.15}s` }}
             >
               <div>
                 <svg
-                  className="w-10 h-10 text-[#D91A6B]/20 mb-6"
+                  className="w-8 md:w-10 h-8 md:h-10 text-[#D91A6B]/20 mb-4 md:mb-6"
                   fill="currentColor"
                   viewBox="0 0 32 32"
                 >
                   <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                 </svg>
-                <p className="font-body text-[#111111]/80 text-base leading-relaxed mb-8 font-medium">
+                <p className="font-body text-[#111111]/80 text-sm md:text-base leading-relaxed mb-6 md:mb-8 font-medium">
                   {test.text}
                 </p>
               </div>
-              <div className="border-t border-[#E8E8E8] pt-6 flex items-center gap-4">
+              <div className="border-t border-[#E8E8E8] pt-4 md:pt-6 flex items-center gap-3 md:gap-4">
                 {/* Author Avatar */}
                 {test.image ? (
-                  <div className="w-14 h-14 rounded-full relative overflow-hidden border-2 border-[#D91A6B]/20 bg-[#F5F5F5]">
+                  <div className="w-12 md:w-14 h-12 md:h-14 rounded-full relative overflow-hidden border-2 border-[#D91A6B]/20 bg-[#F5F5F5] shrink-0">
                     <Image
                       src={test.image}
                       alt={test.author}
@@ -533,15 +533,15 @@ function TestimonialsSection() {
                     />
                   </div>
                 ) : (
-                  <div className="w-14 h-14 rounded-full bg-[#111111]/5 shrink-0 flex items-center justify-center font-display font-semibold text-[#111111]/40 text-lg">
+                  <div className="w-12 md:w-14 h-12 md:h-14 rounded-full bg-[#111111]/5 shrink-0 flex items-center justify-center font-display font-semibold text-[#111111]/40 text-lg">
                     {test.author.charAt(0)}
                   </div>
                 )}
-                <div>
-                  <p className="font-stat text-[#111111] text-sm font-bold uppercase tracking-wider leading-tight mb-1">
+                <div className="min-w-0">
+                  <p className="font-stat text-[#111111] text-xs md:text-sm font-bold uppercase tracking-wider leading-tight mb-1 truncate">
                     {test.author}
                   </p>
-                  <p className="font-body text-[#D91A6B]/80 text-xs font-semibold leading-relaxed">
+                  <p className="font-body text-[#D91A6B]/80 text-xs font-semibold leading-relaxed line-clamp-2">
                     {test.role}
                   </p>
                 </div>

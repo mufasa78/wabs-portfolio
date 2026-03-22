@@ -17,6 +17,16 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
+
   const navLinks = [
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
@@ -56,6 +66,7 @@ export default function Navigation() {
                 <Link
                   key={link.label}
                   href={link.href}
+                  onClick={(e) => handleAnchorClick(e, link.href)}
                   className="font-body text-[#FFFFFF]/80 hover:text-[#FFFFFF] text-sm font-medium transition-colors duration-200"
                 >
                   {link.label}
@@ -109,7 +120,10 @@ export default function Navigation() {
               <Link
                 key={link.label}
                 href={link.href}
-                onClick={() => setMobileOpen(false)}
+                onClick={(e) => {
+                  handleAnchorClick(e, link.href);
+                  setMobileOpen(false);
+                }}
                 className="font-display text-[#FFFFFF] text-4xl font-semibold hover:text-[#D91A6B] transition-colors"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >

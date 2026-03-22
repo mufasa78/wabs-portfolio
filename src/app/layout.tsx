@@ -207,6 +207,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Viewport for responsive design and browser compatibility */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        
+        {/* Browser compatibility */}
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="theme-color" content="#111111" />
+        <meta name="color-scheme" content="light" />
+
         {/* Geographic meta tags */}
         <meta name="geo.region" content="KE-30" />
         <meta name="geo.placename" content="Nairobi, Kenya" />

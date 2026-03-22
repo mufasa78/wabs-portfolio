@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
-import Link from "next/link";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const programs = [
@@ -196,8 +195,10 @@ export default function ProgramsSnapshot() {
                 </div>
 
                 {/* CTA */}
-                <Link
-                  href={program.href}
+                <a
+                  href="https://selar.com/5j65511577"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 py-3.5 px-6 rounded-sm font-body font-semibold text-sm transition-all duration-200 group mt-auto"
                   style={{
                     backgroundColor: program.flagship
@@ -226,7 +227,7 @@ export default function ProgramsSnapshot() {
                     size={15}
                     className="transition-transform duration-200 group-hover:translate-x-1"
                   />
-                </Link>
+                </a>
               </div>
             </div>
           ))}

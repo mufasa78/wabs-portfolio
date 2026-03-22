@@ -43,7 +43,7 @@ export default function AboutSection() {
               style={{ boxShadow: "0 24px 64px rgba(17,17,17,0.2)" }}>
               <Image
                 src="/images/wambui-2.jpeg"
-                alt="Wambui Njuguna-Mungai — Founder, WABS Digital"
+                alt="Wambui Kuria — Founder, WABS Digital"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 90vw, 45vw"
@@ -90,7 +90,7 @@ export default function AboutSection() {
             </h2>
 
             <p className="font-body text-[#2D2D2D]/70 text-base lg:text-lg leading-relaxed mb-6">
-              Wambui Njuguna-Mungai is a personal branding strategist and digital marketing expert
+              Wambui Kuria is a personal branding strategist and digital marketing expert
               with over a decade of experience helping African professionals claim their authority online.
               She founded WABS Digital to bridge the gap between world-class expertise and world-class visibility.
             </p>

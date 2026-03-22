@@ -7,6 +7,7 @@ const services = [
   "Fractional Brand & Marketing Strategist",
   "4-Week Brand Launch & Growth Program",
   "Brand Strategy Consulting",
+  "Brand Clarity Session",
   "Other",
 ];
 
@@ -31,7 +32,15 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Construct WhatsApp message
+    // If Brand Clarity Session is selected, redirect to Selar
+    if (formData.service === "Brand Clarity Session") {
+      window.open("https://selar.com/dlo5455b8f", "_blank");
+      setIsSubmitting(false);
+      setIsDone(true);
+      return;
+    }
+
+    // Construct WhatsApp message for other services
     const whatsappNumber = "254769168665";
     const text = `Hello WABS!%0A%0AMy name is *${formData.name}*.%0A${
       formData.phone ? `Phone: ${formData.phone}%0A` : ""
@@ -56,7 +65,10 @@ export default function ContactForm() {
           Message Ready!
         </h3>
         <p className="font-body text-[#111111]/60 mb-8">
-          I've opened WhatsApp for you to send the message directly to our team.
+          {formData.service === "Brand Clarity Session" 
+            ? "I've opened the Selar booking page for your complimentary Brand Clarity Session."
+            : "I've opened WhatsApp for you to send the message directly to our team."
+          }
         </p>
         <button
           onClick={() => setIsDone(false)}
@@ -156,7 +168,12 @@ export default function ContactForm() {
           disabled={isSubmitting}
           className="w-full inline-flex items-center justify-center gap-3 bg-[#111111] text-[#FFFFFF] px-8 py-4 text-base font-semibold rounded-sm hover:bg-[#2D2D2D] transition-all duration-200 hover:scale-[1.02] font-body group disabled:opacity-50"
         >
-          {isSubmitting ? "Opening WhatsApp..." : "Send via WhatsApp"}
+          {isSubmitting 
+            ? "Opening..." 
+            : formData.service === "Brand Clarity Session" 
+              ? "Book Free Session" 
+              : "Send via WhatsApp"
+          }
           <Send
             size={18}
             className="transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
@@ -164,7 +181,10 @@ export default function ContactForm() {
         </button>
 
         <p className="font-body text-[#111111]/40 text-[10px] text-center uppercase tracking-wider">
-          Redirects to WhatsApp Business · +254 769 168 665
+          {formData.service === "Brand Clarity Session" 
+            ? "Redirects to Selar Booking Platform" 
+            : "Redirects to WhatsApp Business · +254 769 168 665"
+          }
         </p>
       </form>
     </div>

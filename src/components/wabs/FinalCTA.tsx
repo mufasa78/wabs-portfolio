@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import ContactForm from "./ContactForm";
 
 export default function FinalCTA() {
   const ref = useRef<HTMLDivElement>(null);
@@ -54,7 +53,18 @@ export default function FinalCTA() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <ContactForm />
+            <a
+              href="https://selar.com/dlo5455b8f"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 bg-[#111111] text-[#FFFFFF] px-8 py-4 text-base font-semibold rounded-sm hover:bg-[#2D2D2D] transition-all duration-200 hover:scale-[1.02] font-body group"
+            >
+              Book Your Free Clarity Session
+              <ArrowRight
+                size={18}
+                className="transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
+              />
+            </a>
           </div>
 
           <p className="font-body text-[#111111]/40 text-sm mt-6">
