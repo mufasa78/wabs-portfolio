@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { ArrowRight, Check, Shield, Eye, Monitor, ChevronDown } from "lucide-react";
+import { ArrowRight, Check, Eye, Megaphone, Users, ChevronDown, Target, TrendingUp, Zap } from "lucide-react";
 import Link from "next/link";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import Navigation from "../Navigation";
@@ -11,162 +11,164 @@ import ServiceCTA from "./ServiceCTA";
 
 /* ──────────────────────────── Data ──────────────────────────── */
 
-const pillars = [
+const services = [
   {
-    id: "brand",
+    id: "strategy",
     num: "01",
-    icon: Shield,
-    title: "Brand & Positioning",
+    icon: Target,
+    title: "Marketing Strategy & Planning",
     description:
-      "Clarifying your authority, aligning your messaging, and ensuring your expertise is presented consistently across every platform.",
+      "Develop comprehensive marketing strategies that align with your business goals and position you as the authority in your space.",
   },
   {
-    id: "marketing",
-    num: "02",
+    id: "visibility",
+    num: "02", 
     icon: Eye,
-    title: "Marketing & Visibility",
+    title: "Visibility & Content Strategy",
     description:
-      "Structuring your content strategy, preparing for events and launches, and keeping visibility efforts proactive rather than reactive.",
+      "Create structured content plans and visibility systems that keep you consistently in front of your ideal audience.",
   },
   {
-    id: "digital",
+    id: "execution",
     num: "03",
-    icon: Monitor,
-    title: "Digital Infrastructure",
+    icon: Zap,
+    title: "Campaign Execution & Optimization",
     description:
-      "Ensuring you own and control your domains, hosting, platforms, and tools — and that they all support your brand and marketing strategy.",
+      "Execute targeted marketing campaigns and continuously optimize for maximum impact and ROI.",
   },
 ];
 
 const serviceDetails = [
   {
-    id: "brand-detail",
+    id: "strategy-detail",
     num: "01",
-    title: "Brand & Positioning Oversight",
-    tagline: "Ensure Your Brand Communicates the Authority You Already Carry.",
+    title: "Strategic Marketing Planning",
+    tagline: "Marketing That Drives Business Growth — Not Just Activity.",
     description:
-      "Your brand must consistently reflect your expertise, values, and professional goals — across every touchpoint, every platform, every interaction.",
+      "Effective marketing isn't about being everywhere — it's about being in the right places with the right message. We build marketing strategies that position you as the obvious choice for your ideal clients.",
     items: [
-      "Clarifying and refining your brand positioning and core narrative",
-      "Ensuring your messaging communicates authority clearly across platforms",
-      "Structuring how your expertise and offers are presented online",
-      "Aligning your brand with your long-term professional and business goals",
-      "Ensuring consistency across all brand touchpoints and communication",
+      "Comprehensive market analysis and competitive positioning",
+      "Ideal client persona development and audience mapping",
+      "Marketing channel selection and prioritization strategy",
+      "Brand messaging framework and communication hierarchy",
+      "Marketing budget allocation and ROI projections",
+      "Quarterly marketing roadmap with clear milestones",
     ],
     quote:
-      "When positioning is clear, your expertise becomes easier for your audience to understand, trust, and engage with.",
+      "The best marketing strategies aren't the loudest — they're the most precisely targeted.",
   },
   {
-    id: "marketing-detail",
+    id: "visibility-detail",
     num: "02",
-    title: "Marketing & Visibility Oversight",
-    tagline: "Marketing That Supports Your Leadership — Without Overwhelming It.",
+    title: "Content Strategy & Visibility Systems",
+    tagline: "Build Authority Through Strategic Content Presence.",
     description:
-      "Visibility must be planned and strategic, not reactive and scattered. I ensure your brand communication remains consistent, proactive, and aligned with your business objectives.",
+      "Your expertise deserves to be seen by the right people. We create content strategies that establish your authority, attract your ideal audience, and convert visibility into opportunities.",
     items: [
-      "Structuring your content calendar and thought leadership strategy",
-      "Preparing marketing materials for events, launches, and announcements",
-      "Coordinating marketing direction with your internal team or external creatives",
-      "Ensuring consistent brand communication across all platforms",
-      "Anticipating visibility needs so your brand is always positioned ahead of the curve",
+      "Content pillar development and topic architecture",
+      "LinkedIn, Twitter, and industry platform content strategies",
+      "Thought leadership content series and expert positioning",
+      "Content repurposing systems for maximum reach",
+      "Engagement strategies that build genuine connections",
+      "Content calendar aligned with business objectives",
     ],
   },
   {
-    id: "digital-detail",
+    id: "execution-detail",
     num: "03",
-    title: "Digital Infrastructure & Technical Oversight",
-    tagline: "Your Digital Assets Should Be Yours. Fully Owned. Fully Controlled.",
+    title: "Campaign Management & Performance Optimization",
+    tagline: "Execute With Precision — Optimize for Results.",
     description:
-      "Many leaders invest in websites, platforms, and digital tools — then discover they do not truly own or control them. This oversight protects your digital assets and ensures every platform serves your brand strategy.",
+      "Strategy without execution is just planning. We ensure your marketing initiatives are implemented effectively and continuously optimized for better performance.",
     items: [
-      "Ensuring proper ownership of your domain, hosting, and key digital accounts",
-      "Reviewing website development briefs, scope of work, and deliverables",
-      "Guiding communication with developers, designers, and technical teams",
-      "Ensuring proper handover of website files and access credentials",
-      "Structuring secure access to social media platforms and digital tools",
-      "Advising on AI-powered tools, workflow automation, and collaboration platforms that reduce manual effort",
+      "Campaign planning, launch management, and coordination",
+      "Performance tracking and analytics implementation",
+      "A/B testing and conversion rate optimization",
+      "Marketing automation and workflow optimization",
+      "Team coordination and vendor management",
+      "Monthly performance reviews and strategic adjustments",
     ],
     footer:
-      "The goal is not to overwhelm you with technology. The goal is to ensure the right infrastructure supports your brand — so your visibility grows without your energy being consumed by technical decisions.",
+      "The goal is not just to run campaigns — it's to build marketing systems that grow stronger and more effective over time.",
   },
 ];
 
 const benefits = [
   {
-    title: "Strategic Oversight",
-    desc: "One person accountable for the direction of your brand, marketing, and digital systems.",
+    title: "Strategic Direction",
+    desc: "Clear marketing roadmap that aligns with your business objectives and growth targets.",
   },
   {
-    title: "Clear Positioning",
-    desc: "Your authority and expertise communicated without ambiguity — online and offline.",
+    title: "Authority Building",
+    desc: "Position yourself as the go-to expert in your industry through strategic content and visibility.",
   },
   {
-    title: "Structured Visibility",
-    desc: "A marketing strategy that moves forward consistently, not only when you have time for it.",
+    title: "Quality Leads",
+    desc: "Attract higher-quality clients who value your expertise and are willing to pay premium rates.",
   },
   {
-    title: "Digital Asset Protection",
-    desc: "You own and control every platform, account, and piece of digital infrastructure.",
+    title: "Consistent Visibility",
+    desc: "Maintain steady market presence without the overwhelm of constant content creation.",
   },
   {
-    title: "Consistent Messaging",
-    desc: "Your brand sounds and looks like you — on every platform, every time.",
+    title: "Measurable Results",
+    desc: "Track what matters with clear KPIs and performance metrics that demonstrate marketing ROI.",
   },
   {
-    title: "Reduced Decision Fatigue",
-    desc: "You stop making reactive branding and technical decisions and start operating from strategy.",
+    title: "Team Alignment",
+    desc: "Ensure your marketing efforts, sales team, and business goals are perfectly synchronized.",
   },
 ];
 
 const idealClient = [
-  "You are a CEO or senior executive ready to build a brand presence that matches your leadership",
-  "You are a consultant or coach with growing visibility who needs strategic infrastructure behind it",
-  "You are a founder leading an expanding business and you need your brand to grow alongside it",
-  "You have a marketing team, creatives, or developers — but no clear strategic direction unifying their work",
-  "You want to stop managing branding and digital issues reactively and start operating from a long-term strategy",
+  "You are an established expert who needs to translate your authority into market visibility",
+  "You have valuable expertise but struggle to attract the right caliber of clients consistently",
+  "You want to scale your impact without getting overwhelmed by marketing complexity",
+  "You need marketing that reflects the quality and premium nature of your services",
+  "You're ready to invest in strategic marketing that drives real business growth",
 ];
 
 const steps = [
   {
     num: "01",
-    title: "Book a 2-Hour Brand Clarity Session",
-    desc: "We assess your current brand positioning, marketing structure, and digital infrastructure together.",
+    title: "Marketing Strategy Session",
+    desc: "We conduct a deep dive into your current marketing, business goals, and growth opportunities.",
   },
   {
-    num: "02",
-    title: "Strategic Recommendations",
-    desc: "By the end of the session, you have a clear picture of where your brand stands and what needs to change.",
+    num: "02", 
+    title: "Strategic Marketing Plan",
+    desc: "You receive a comprehensive marketing strategy with clear priorities, channels, and implementation roadmap.",
   },
   {
     num: "03",
-    title: "Retainer Partnership",
-    desc: "If the engagement is a fit, we move into an ongoing monthly advisory relationship structured around your goals and growth.",
+    title: "Implementation Partnership",
+    desc: "We work together to execute the strategy, optimize performance, and scale your marketing impact.",
   },
 ];
 
 /* ──────────────────────────── Component ──────────────────────────── */
 
-export default function FractionalStrategistPage() {
+export default function MarketingStrategistPage() {
   return (
     <main className="min-h-screen" style={{ backgroundColor: "#FFFFFF" }}>
       <Navigation />
 
       {/* ── Hero ── */}
       <ServiceHero
-        eyebrow="Fractional Brand & Marketing Strategist"
-        title="Your Brand Visibility Is a Strategic Asset."
-        titleAccent="Treat It Like One."
-        subtitle="Executive-level brand, marketing, and digital oversight — without the cost of a full-time hire."
-        description="You have built a career worth recognising. But without clear positioning, structured marketing, and properly owned digital infrastructure, the right opportunities will continue to pass you by."
-        ctaText="Book Your Brand Clarity Session"
+        eyebrow="Marketing Strategist"
+        title="Your Expertise Deserves"
+        titleAccent="Strategic Visibility."
+        subtitle="Transform your authority into market leadership through targeted marketing strategies."
+        description="You've built significant expertise in your field. But without strategic marketing, the right clients may never discover you. We bridge that gap with marketing that positions you as the obvious choice."
+        ctaText="Book Your Marketing Strategy Session"
         ctaHref="https://selar.com/dlo5455b8f"
       />
 
       {/* ── Explainer ── */}
       <ExplainerSection />
 
-      {/* ── Three Pillars ── */}
-      <PillarsSection />
+      {/* ── Three Services ── */}
+      <ServicesSection />
 
       {/* ── Service Details ── */}
       <ServiceDetailsSection />
@@ -185,10 +187,10 @@ export default function FractionalStrategistPage() {
 
       {/* ── Page CTA ── */}
       <ServiceCTA
-        headline="Your Brand Should Reflect"
-        headlineAccent="the Authority You Already Carry."
-        description="We review your brand positioning, marketing structure, and digital infrastructure — then map your clearest path forward."
-        closingLine="Because clarity is the foundation of every strong brand."
+        headline="Your Marketing Should Reflect"
+        headlineAccent="the Quality of Your Expertise."
+        description="Let's create a marketing strategy that positions you as the authority you already are."
+        closingLine="Because strategic visibility is the bridge between expertise and opportunity."
       />
 
       <Footer />
@@ -213,7 +215,7 @@ function ExplainerSection() {
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-[#D91A6B]" />
             <span className="font-stat text-[#D91A6B] text-sm uppercase tracking-widest font-medium">
-              What Is This?
+              What This Is
             </span>
           </div>
           <h2
@@ -223,25 +225,23 @@ function ExplainerSection() {
               fontVariationSettings: '"WONK" 0.5',
             }}
           >
-            What Is a Fractional Brand &<br />
-            <span className="text-[#D91A6B] italic">Marketing Strategist?</span>
+            Strategic Marketing<br />
+            <span className="text-[#D91A6B] italic">That Positions You as Authority.</span>
           </h2>
           <div className="space-y-6 font-body text-[#111111]/70 text-lg leading-relaxed">
             <p>
-              A Fractional Brand & Marketing Strategist gives you executive-level oversight
-              of your branding, marketing, and digital systems — at a fraction of the cost
-              and commitment of a full-time senior hire.
+              A Marketing Strategist provides the strategic direction and expertise needed 
+              to transform your professional authority into market visibility. We don't just 
+              create content — we build marketing systems that consistently attract your ideal clients.
             </p>
             <p>
-              Instead of managing the entire ecosystem yourself, you gain a strategic
-              partner who ensures your brand visibility, marketing activities, and digital
-              platforms remain structured, protected, and aligned with your business goals.
+              Instead of random marketing activities, you gain a strategic partner who ensures 
+              every marketing effort serves your business objectives, builds your brand, and 
+              creates sustainable growth pathways.
             </p>
             <p className="font-medium text-[#111111]/85">
-              Most leaders who seek this support initially come for one thing — branding
-              or marketing — and quickly realise they also need someone to oversee the
-              digital infrastructure behind it. This partnership ensures all three areas
-              work together seamlessly.
+              Most experts who seek this support have already achieved significant success in their field — 
+              they just need the marketing strategy to match their level of expertise.
             </p>
           </div>
         </div>
@@ -250,7 +250,7 @@ function ExplainerSection() {
   );
 }
 
-function PillarsSection() {
+function ServicesSection() {
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useScrollAnimation(ref);
 
@@ -265,7 +265,7 @@ function PillarsSection() {
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-px bg-[#D91A6B]" />
             <span className="font-stat text-[#D91A6B] text-sm uppercase tracking-widest font-medium">
-              Three Areas of Oversight
+              Three Core Areas
             </span>
           </div>
           <h2
@@ -275,17 +275,17 @@ function PillarsSection() {
               fontVariationSettings: '"WONK" 0.5',
             }}
           >
-            Your Brand Ecosystem —<br />
-            <span className="text-[#D91A6B] italic">Managed Strategically.</span>
+            Strategic Marketing<br />
+            <span className="text-[#D91A6B] italic">That Drives Results.</span>
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
-          {pillars.map((p, i) => {
-            const Icon = p.icon;
+          {services.map((service, i) => {
+            const Icon = service.icon;
             return (
               <div
-                key={p.id}
+                key={service.id}
                 className={`relative bg-[#111111] rounded-sm p-8 lg:p-10 overflow-hidden transition-[opacity,transform] duration-500 ease-out group ${
                   isVisible
                     ? "opacity-100 translate-y-0"
@@ -294,7 +294,7 @@ function PillarsSection() {
                 style={{ transitionDelay: `${i * 0.15}s` }}
               >
                 <span className="font-stat text-[#D91A6B] text-xs font-bold uppercase tracking-widest mb-4 block">
-                  {p.num}
+                  {service.num}
                 </span>
                 <Icon
                   size={32}
@@ -305,10 +305,10 @@ function PillarsSection() {
                   className="font-display text-[#FFFFFF] text-xl lg:text-2xl font-semibold mb-4"
                   style={{ fontVariationSettings: '"WONK" 0.3' }}
                 >
-                  {p.title}
+                  {service.title}
                 </h3>
                 <p className="font-body text-[#FFFFFF]/60 text-base leading-relaxed">
-                  {p.description}
+                  {service.description}
                 </p>
                 {/* Bottom accent */}
                 <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#D91A6B] group-hover:w-full transition-all duration-500" />
@@ -420,7 +420,7 @@ function ServiceDetailsSection() {
                           &ldquo;{detail.quote}&rdquo;
                         </p>
                         <p className="font-stat text-[#D91A6B] text-xs uppercase tracking-widest mt-2 font-semibold">
-                          — Brand positioning principle
+                          — Marketing strategy principle
                         </p>
                       </blockquote>
                     )}
@@ -463,7 +463,7 @@ function ValuePropSection() {
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-[#D91A6B]" />
             <span className="font-stat text-[#D91A6B] text-sm uppercase tracking-widest font-medium">
-              Why This Model
+              Why Strategic Marketing
             </span>
           </div>
           <h2
@@ -473,23 +473,22 @@ function ValuePropSection() {
               fontVariationSettings: '"WONK" 0.5',
             }}
           >
-            Why Leaders Choose<br />
-            <span className="text-[#D91A6B] italic">the Fractional Model.</span>
+            Why Experts Choose<br />
+            <span className="text-[#D91A6B] italic">Strategic Marketing Partnership.</span>
           </h2>
           <div className="space-y-6 font-body text-[#FFFFFF]/65 text-lg leading-relaxed">
             <p>
-              At a certain stage of growth, branding and marketing become too important
-              to ignore — yet too operational to manage personally.
+              At a certain level of expertise, marketing becomes too important to leave to chance — 
+              yet too specialized to manage effectively alongside your core work.
             </p>
             <p>
-              You may already have designers, developers, content creators, or a small
-              marketing team. But without clear strategic oversight, their efforts can
-              easily become fragmented, reactive, or misaligned with your real business
-              goals.
+              You may have tried various marketing tactics, hired agencies, or attempted to handle it yourself. 
+              But without strategic direction, these efforts often become disconnected, inconsistent, or fail to 
+              attract the caliber of clients you deserve.
             </p>
             <p className="text-[#FFFFFF]/80 font-medium">
-              A Fractional Brand & Marketing Strategist ensures everything moves in a
-              unified, intentional direction.
+              A Marketing Strategist ensures every marketing investment builds your authority, 
+              attracts quality clients, and contributes to sustainable business growth.
             </p>
           </div>
         </div>
@@ -524,7 +523,7 @@ function BenefitsSection() {
             }}
           >
             What You Gain From<br />
-            <span className="text-[#D91A6B] italic">This Partnership.</span>
+            <span className="text-[#D91A6B] italic">Strategic Marketing.</span>
           </h2>
         </div>
 
@@ -585,8 +584,8 @@ function IdealClientSection() {
             <span className="text-[#D91A6B] italic">Built For You If...</span>
           </h2>
           <p className="font-body text-[#111111]/65 text-lg leading-relaxed mb-10">
-            This engagement is best suited for established leaders who already carry real
-            authority — but whose brand presence has not yet caught up with it.
+            This engagement is designed for established experts who have already achieved significant success — 
+            and are ready to scale their impact through strategic marketing.
           </p>
 
           <ul className="space-y-4">
@@ -636,17 +635,15 @@ function EngagementSection() {
               fontVariationSettings: '"WONK" 0.5',
             }}
           >
-            How the Engagement<br />
-            <span className="text-[#D91A6B] italic">Works.</span>
+            How the Marketing<br />
+            <span className="text-[#D91A6B] italic">Partnership Works.</span>
           </h2>
           <p className="font-body text-[#111111]/65 text-lg leading-relaxed max-w-2xl">
-            This role is offered as a monthly retainer engagement. Unlike project-based
-            work, it provides ongoing strategic support that evolves with your business —
-            not a one-time output.
+            This marketing partnership is offered as both project-based engagements and ongoing retainers, 
+            depending on your needs and growth stage.
           </p>
           <p className="font-body text-[#111111]/55 text-base leading-relaxed mt-3 italic">
-            To maintain the quality and depth this role demands, I work with a limited
-            number of advisory clients at any given time.
+            To ensure dedicated attention and strategic depth, I work with a limited number of marketing clients at any given time.
           </p>
         </div>
 

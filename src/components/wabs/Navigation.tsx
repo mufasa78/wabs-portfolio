@@ -53,7 +53,8 @@ export default function Navigation() {
                 alt="WABS Digital"
                 width={40}
                 height={40}
-                className="h-10 w-auto object-contain"
+                className="h-10 w-auto"
+                style={{ objectFit: 'contain' }}
                 priority
                 sizes="40px"
                 quality={90}
@@ -77,7 +78,9 @@ export default function Navigation() {
             {/* CTA Button — Desktop */}
             <div className="hidden lg:flex items-center gap-4">
               <a
-                href="#booking"
+                href="https://selar.com/dlo5455b8f"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#D91A6B] text-[#FFFFFF] px-5 py-2.5 text-sm font-semibold rounded-sm hover:bg-[#A01050] transition-all duration-200 hover:scale-[1.03] hover:shadow-lg font-body"
               >
                 Book Brand Clarity
@@ -104,7 +107,9 @@ export default function Navigation() {
               alt="WABS Digital"
               width={36}
               height={36}
-              className="h-9 w-auto object-contain"
+              className="h-9 w-auto"
+              style={{ objectFit: 'contain' }}
+              priority
               sizes="36px"
               quality={90}
             />
@@ -131,7 +136,9 @@ export default function Navigation() {
               </Link>
             ))}
             <a
-              href="#booking"
+              href="https://selar.com/dlo5455b8f"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
               className="mt-8 inline-block bg-[#D91A6B] text-[#FFFFFF] px-8 py-4 text-lg font-semibold rounded-sm text-center font-body"
             >

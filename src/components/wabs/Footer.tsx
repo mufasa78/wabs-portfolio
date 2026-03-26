@@ -81,7 +81,9 @@ export default function Footer() {
                 alt="WABS Digital"
                 width={48}
                 height={48}
-                className="h-12 w-auto object-contain"
+                className="h-12 w-auto"
+                style={{ objectFit: 'contain' }}
+                priority
                 sizes="48px"
                 quality={90}
               />

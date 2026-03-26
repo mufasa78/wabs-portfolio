@@ -112,7 +112,7 @@ export default function ServiceHero({
 
             {/* CTA */}
             <div
-              className={`transition-[opacity,transform] duration-700 ease-out delay-[400ms] ${
+              className={`transition-[opacity,transform] duration-700 ease-out delay-400ms ${
                 mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >

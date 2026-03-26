@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
+import Link from "next/link";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const programs = [
@@ -23,6 +24,11 @@ const programs = [
     cta: "Learn More",
     href: "/fractional-strategist",
     flagship: false,
+    investment: {
+      type: "Monthly Retainer",
+      price: "Custom",
+      note: "Based on scope and complexity"
+    }
   },
   {
     id: "4-week-program",
@@ -42,6 +48,11 @@ const programs = [
     cta: "Explore the Program",
     href: "/4-week-brand-program",
     flagship: true,
+    investment: {
+      type: "One-Time Investment",
+      price: "$2,500",
+      note: "Payment plans available"
+    }
   },
 ];
 
@@ -194,11 +205,43 @@ export default function ProgramsSnapshot() {
                   {program.qualifier}
                 </div>
 
+                {/* Investment Options */}
+                <div className="mt-6 mb-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-stat text-xs uppercase tracking-widest font-semibold" style={{ color: program.flagship ? "#D91A6B" : "#D91A6B" }}>
+                      Investment Options
+                    </span>
+                    {program.flagship && (
+                      <span className="bg-[#D91A6B] text-[#FFFFFF] font-stat text-xs font-bold uppercase tracking-widest px-2 py-1 rounded-sm">
+                        Most Popular
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-baseline gap-2 mb-1">
+                    <span 
+                      className="font-display text-2xl font-bold" 
+                      style={{ color: program.flagship ? "#111111" : "#FFFFFF" }}
+                    >
+                      {program.investment.price}
+                    </span>
+                    <span 
+                      className="font-body text-sm" 
+                      style={{ color: program.flagship ? "#111111" : "#F5F5F5", opacity: program.flagship ? 0.7 : 0.6 }}
+                    >
+                      {program.investment.type}
+                    </span>
+                  </div>
+                  <p 
+                    className="font-body text-xs" 
+                    style={{ color: program.flagship ? "#111111" : "#F5F5F5", opacity: program.flagship ? 0.6 : 0.5 }}
+                  >
+                    {program.investment.note}
+                  </p>
+                </div>
+
                 {/* CTA */}
-                <a
-                  href="https://selar.com/5j65511577"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href={program.href}
                   className="flex items-center justify-center gap-2 py-3.5 px-6 rounded-sm font-body font-semibold text-sm transition-all duration-200 group mt-auto"
                   style={{
                     backgroundColor: program.flagship
@@ -227,7 +270,7 @@ export default function ProgramsSnapshot() {
                     size={15}
                     className="transition-transform duration-200 group-hover:translate-x-1"
                   />
-                </a>
+                </Link>
               </div>
             </div>
           ))}

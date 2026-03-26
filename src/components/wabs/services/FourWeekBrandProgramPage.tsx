@@ -205,7 +205,7 @@ export default function FourWeekBrandProgramPage() {
         subtitle="Your expertise deserves authority — not just recognition."
         description="The 4-Week Strategic Brand Launch & Growth Program is a focused, done-with-you engagement designed for senior professionals, consultants, coaches, and founders ready to transform their expertise into a credible, visible, and opportunity-generating brand."
         ctaText="Book Your Brand Clarity Session"
-        ctaHref="#booking"
+        ctaHref="https://selar.com/dlo5455b8f"
       />
 
       {/* ── Audience Segmentation ── */}
